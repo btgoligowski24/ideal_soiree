@@ -1,4 +1,4 @@
-#home {
-    background: url("/images/cocktails.jpg");
+body {
+    background: url("../public/images/cocktails.jpg");
     background-size: cover;
 }
