@@ -11,6 +11,18 @@ module.exports = function(app) {
         });
     });
 
+    //Load for build page 
+    app.get("/", function(req, res) {
+        db.Example.findAll({}).then(function(dbExamples) {
+            res.render("build", {
+                title: "Build Your Own Theme!",
+                style: "build.css",
+                description: "Here you can build your own theme"
+            });
+        });
+    });
+
+
     // Load example page and pass in an example by id
     app.get("/example/:id", function(req, res) {
         db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
