@@ -1,4 +1,4 @@
-<div id="home" style="background:url('/images/cocktails.jpg'); background-size: cover;">
+<body>
     <div class="container-fluid">
         <br></br>
         <div class="row justify-content-md-center">
@@ -14,20 +14,66 @@
                 data-container="body" data-toggle="popover" data-placement="left"
                 data-content="Check out our ready-made party themes to get your start.">VIEW PARTY THEMES</button>
             <button type="button" id="build-themes" class="btn btn-outline-light m-2" style="background-color: #d78c26"
-                data-container="body" data-toggle="popover" data-placement="right"
+                data-container="body" data-toggle="modal" data-target="#exampleModal" data-placement="right"
                 data-content="Search categories to create you own theme.">BUILD A THEME</button>
         </div>
     </div>
-    <!-- BOOTSTRAP JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/js/index.js"></script>
-</div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a Theme Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="myform">
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="validationServer01">Your Theme Name</label>
+                                <input type="text" class="form-control" name="theme_name" id="theme_name"
+                                    placeholder="Be Creative!">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="/build"><button type="button"
+                                    class="btn btn-warning text-white">Submit</button></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- BOOTSTRAP JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+        <!-- Makes the theme_name field required, a theme_name and does a remote request to check if the given theme name is already taken. In addition, the http method is set to "post" and the theme name is sent -->
+        <script type="text/javascript">
+            $("#myform").validate({
+                rules: {
+                    theme_name: {
+                        required: true,
+                        theme_name: true,
+                        remote: {
+                            url: "schema.sql",
+                            type: "post",
+                            data: {
+                                theme_name: function () {
+                                    return $("#theme_name").val();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+</body>
