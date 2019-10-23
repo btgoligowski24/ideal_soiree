@@ -17,9 +17,18 @@ module.exports = {
     dialect: "mysql",
     operatorsAliases: false
   },
+  ci: {
+    username: "root",
+    password: "root",
+    database: "testdb",
+    host: "127.0.0.1",
+    socketPath: "~travis/.my.cnf",
+    dialect: "mysql",
+    logging: false
+  },
   production: {
     use_env_variable: "JAWSDB_URL",
     dialect: "mysql",
     operatorsAliases: false
   }
-}
+};
