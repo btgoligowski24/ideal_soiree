@@ -1,0 +1,884 @@
+<!--Side-Nav-->
+<div class="sidenav">
+    <nav class="navbar navbar-dark bg-black">
+
+        <!--Side-Nav Search Bar -->
+        <form class="form-inline md-form form-sm">
+            <input class="form-control form-control-sm mr-3 w-80" type="text" placeholder="Search" aria-label="Search"
+                style="margin-bottom: 20px">
+            <i class="fa fa-search" style="color:white; font-size: 25px;margin-bottom: 20px" aria-hidden="true"></i>
+        </form>
+    </nav>
+
+    <!--Side-Nav Categories -->
+    <div class="dropdown-btn">Categories
+        <i class="fa fa-caret-down"></i>
+    </div>
+    <div class="dropdown-container">
+        <a href="#" id="appetizers">Appetizers</a>
+        <button class="dropdown-btn">Entrees
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#" id="beef">Beef</a>
+            <a href="#" id="chicken">Chicken</a>
+            <a href="#" id="lamb">Lamb</a>
+            <a href="#" id="pork">Pork</a>
+            <a href="#" id="seafood">Seafood</a>
+            <a href="#" id="vegan">Vegan</a>
+            <a href="#" id="vegetarian">Vegetarian</a>
+        </div>
+        <a href="#" id="drink">Drink</a>
+        <a href="#" id="sides">Sides</a>
+        <a href="#" id="dessert">Dessert</a>
+    </div>
+    <button class="dropdown-btn">Themes
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="#">Movies and TV</a>
+        <div class="dropdown-container">
+            <a href="#">Alice in Wonderland</a>
+            <a href="#">Almost Famous</a>
+            <a href="#">Sex and the City</a>
+        </div>
+        <a href="#">Seasonal</a>
+        <div class="dropdown-container">
+            <a href="#">Fright Fest</a>
+            <a href="#">Cinco de Drinko</a>
+            <a href="#">Winter Wonderland</a>
+        </div>
+        <a href="#">Historical</a>
+        <div class="dropdown-container">
+            <a href="#">Prohibition</a>
+        </div>
+        <a href="#">Just For Fun</a>
+        <div class="dropdown-container">
+            <a href="#">A Night in Paris</a>
+            <a href="#">Impeachment Party</a>
+            <a href="#">Redneck Yacht Club</a>
+        </div>
+        <a href="#">Add a Category</a>
+        <!-- takes you to modal like on homepage on click then to build a theme -->
+    </div>
+</div>
+<!-- MAIN CONTENT -->
+<div class="main">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="d-inline col-12 pl-5 pt-3">
+                <h1 style="font-family: 'Sofia', cursive; font-size: 40pt; text-align: center;" class="text-dark">
+                    Starter Themes</h1>
+
+                <!-- COLLAPSE CARD -->
+                <div class="accordion" id="accordionExample">
+                    <!-- START ALMOST FAMOUS-->
+                    <div class="card">
+                        <div class="card-header" id="headingFive">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
+                                    aria-controls="collapseFive">Almost Famous</button>
+                            </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse show" aria-labelledby="headingFive"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home5-tab" data-toggle="tab"
+                                                    href="#home5" role="tab" aria-controls="home5"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile5-tab" data-toggle="tab"
+                                                    href="#profile5" role="tab" aria-controls="profile5"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages5-tab" data-toggle="tab"
+                                                    href="#messages5" role="tab" aria-controls="messages5"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <!-- ALMOST FAMOUS THEME TAB -->
+                                            <div class="tab-pane active" id="home5" role="tabpanel"
+                                                aria-labelledby="home5-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Almost Famous</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ALMOST FAMOUS FOOD TAB -->
+                                            <div class="tab-pane" id="profile5" role="tabpanel"
+                                                aria-labelledby="profile5-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/bitterballen.jpg" class="card-img-top"
+                                                            alt="Bitterballen">
+
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/cashew_biscuits.jpg"
+                                                            class="card-img-top" alt="cashew_biscuits">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ALMOST FAMOUS DRINKS TAB -->
+                                            <div class="tab-pane" id="messages5" role="tabpanel"
+                                                aria-labelledby="messages5-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/white_russian.jpg" class="card-img-top"
+                                                            alt="white_russian">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/acid.jpg" class="card-img-top"
+                                                            alt="acid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START DOWN THE RABBIT HOLE -->
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark collapsed"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">Down the Rabbit Hole</button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home3-tab" data-toggle="tab"
+                                                    href="#home3" role="tab" aria-controls="home3"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile3-tab" data-toggle="tab"
+                                                    href="#profile3" role="tab" aria-controls="profile3"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages3-tab" data-toggle="tab"
+                                                    href="#messages3" role="tab" aria-controls="messages3"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- DOWN THE RABBIT HOLE THEME TAB -->
+                                            <div class="tab-pane active" id="home3" role="tabpanel"
+                                                aria-labelledby="home3-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Down The Rabbit Hole</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- DOWN THE RABBIT HOLE FOOD TAB -->
+                                            <div class="tab-pane" id="profile3" role="tabpanel"
+                                                aria-labelledby="profile3-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/cheese_souffle.jpg" class="card-img-top"
+                                                            alt="cheese_souffle">
+
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/cremebrulee.jpg" class="card-img-top"
+                                                            alt="creme_brulee">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- DOWN THE RABBIT HOLE DRINKS TAB -->
+                                            <div class="tab-pane" id="messages3" role="tabpanel"
+                                                aria-labelledby="messages3-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/absinthe.jpg" class="card-img-top"
+                                                            alt="absinthe">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/brainteaser.jpg" class="card-img-top"
+                                                            alt="brain_teaser">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START SEX AND THE CITY -->
+                    <div class="card">
+                        <div class="card-header" id="headingSeven">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark collapsed"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
+                                    aria-controls="collapseSeven">Sex and the City</button>
+                            </h2>
+                        </div>
+                        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home7-tab" data-toggle="tab"
+                                                    href="#home7" role="tab" aria-controls="home7"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile7-tab" data-toggle="tab"
+                                                    href="#profile7" role="tab" aria-controls="profile7"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages7-tab" data-toggle="tab"
+                                                    href="#messages7" role="tab" aria-controls="messages7"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- SEX AND THE CITY THEME TAB -->
+                                            <div class="tab-pane active" id="home7" role="tabpanel"
+                                                aria-labelledby="home7-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Sex and the City</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- SEX AND THE CITY FOOD TAB -->
+                                            <div class="tab-pane" id="profile7" role="tabpanel"
+                                                aria-labelledby="profile7-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/chocolate_avocado.jpg"
+                                                            class="card-img-top" alt="but_without_the_calories">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- SEX AND THE CITY DRINKS TAB -->
+                                            <div class="tab-pane" id="messages7" role="tabpanel"
+                                                aria-labelledby="messages7-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/cosmopolitan.jpg" class="card-img-top"
+                                                            alt="cosmopolitan_martini">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- START FRIGHT FEST -->
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark collapsed"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Fright Fest
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home2-tab" data-toggle="tab"
+                                                    href="#home2" role="tab" aria-controls="home2"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile2-tab" data-toggle="tab"
+                                                    href="#profile2" role="tab" aria-controls="profile2"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages2-tab" data-toggle="tab"
+                                                    href="#messages2" role="tab" aria-controls="messages2"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- FRIGHT FEST THEME TAB -->
+                                            <div class="tab-pane active" id="home2" role="tabpanel"
+                                                aria-labelledby="home2-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Fright Fest</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- FRIGHT FEST FOOD TAB -->
+                                            <div class="tab-pane" id="profile2" role="tabpanel"
+                                                aria-labelledby="profile2-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/spaghetti.jpg" class="card-img-top"
+                                                            alt="spaghetti">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/chocolate_rasberry.jpg"
+                                                            class="card-img-top" alt="chocolate_rasberry">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- FRIGHT FEST DRINKS TAB -->
+                                            <div class="tab-pane" id="messages2" role="tabpanel"
+                                                aria-labelledby="messages2-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/halloween_punch.jpg"
+                                                            class="card-img-top" alt="halloween_punch">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/freddy_kruger.jpg" class="card-img-top"
+                                                            alt="freddy_kruger">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START WINTER WONDERLAND -->
+                    <div class="card">
+                        <div class="card-header" id="headingNine">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark collapsed"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseNine" aria-expanded="false"
+                                    aria-controls="collapseNine">Winter Wonderland</button>
+                            </h2>
+                        </div>
+                        <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home9-tab" data-toggle="tab"
+                                                    href="#home9" role="tab" aria-controls="home9"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile9-tab" data-toggle="tab"
+                                                    href="#profile9" role="tab" aria-controls="profile9"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages9-tab" data-toggle="tab"
+                                                    href="#messages9" role="tab" aria-controls="messages9"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- WINTER WONDERLAND THEME TAB -->
+                                            <div class="tab-pane active" id="home9" role="tabpanel"
+                                                aria-labelledby="home9-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Winter Wonderland
+                                                            <h1>
+                                                                <p class="lead">This is a modified jumbotron that
+                                                                    occupies the entire horizontal space of its parent.
+                                                                </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- WINTER WONDERLAND FOOD TAB -->
+                                            <div class="tab-pane" id="profile9" role="tabpanel"
+                                                aria-labelledby="profile9-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/fettucine_alfredo.jpg"
+                                                            class="card-img-top" alt="fettucine_alfredo">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/apple_frangipan_tart.jpg"
+                                                            class="card-img-top" alt="apple_frangipan_tart">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- WINTER WONDERLAND DRINKS TAB -->
+                                            <div class="tab-pane" id="messages9" role="tabpanel"
+                                                aria-labelledby="messages9-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/egg_nog4.jpg" class="card-img-top"
+                                                            alt="egg_nog4">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/rum_toddy.jpg" class="card-img-top"
+                                                            alt="rum_toddy">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START CINCO DE DRINKO -->
+                    <div class="card">
+                        <div class="card-header" id="headingFour">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark collapsed"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">Cinco de Drinko</button>
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home4-tab" data-toggle="tab"
+                                                    href="#home4" role="tab" aria-controls="home4"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile4-tab" data-toggle="tab"
+                                                    href="#profile4" role="tab" aria-controls="profile4"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages4-tab" data-toggle="tab"
+                                                    href="#messages4" role="tab" aria-controls="messages4"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- CINCO DE DRINKO THEME TAB -->
+                                            <div class="tab-pane active" id="home4" role="tabpanel"
+                                                aria-labelledby="home4-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Cinco de Drinko</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- CINCO DE DRINKO FOOD TAB -->
+                                            <div class="tab-pane" id="profile4" role="tabpanel"
+                                                aria-labelledby="profile4-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/fajita_mac.jpg" class="card-img-top"
+                                                            alt="fajita_mac">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/fish_tacos.jpg" class="card-img-top"
+                                                            alt="fish_tacos">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- CINCO DE DRINKO DRINKS TAB -->
+                                            <div class="tab-pane" id="messages4" role="tabpanel"
+                                                aria-labelledby="messages4-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/margarita.jpg" class="card-img-top"
+                                                            alt="margarita">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/tequila_slammer.jpg"
+                                                            class="card-img-top" alt="tequila_slammer">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- START PROHIBITION -->
+                    <div class="card">
+                        <div class="card-header" id="headingEight">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark collapsed"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseEight" aria-expanded="false"
+                                    aria-controls="collapseEight">
+                                    Prohibition
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home8-tab" data-toggle="tab"
+                                                    href="#home8" role="tab" aria-controls="home8"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile8-tab" data-toggle="tab"
+                                                    href="#profile8" role="tab" aria-controls="profile8"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages8-tab" data-toggle="tab"
+                                                    href="#messages8" role="tab" aria-controls="messages8"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- PROHIBITION THEME TAB -->
+                                            <div class="tab-pane active" id="home8" role="tabpanel"
+                                                aria-labelledby="home8-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Prohibition</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- PROHIBITION FOOD TAB -->
+                                            <div class="tab-pane" id="profile8" role="tabpanel"
+                                                aria-labelledby="profile8-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/cannelloni.jpg" class="card-img-top"
+                                                            alt="spinich_ricotta_cannelloni">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- PROHIBITION DRINKS TAB -->
+                                            <div class="tab-pane" id="messages8" role="tabpanel"
+                                                aria-labelledby="messages8-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/old_fashioned.jpg" class="card-img-top"
+                                                            alt="old_fashioned">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/manhattan.jpg" class="card-img-top"
+                                                            alt="manhattan">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- START A NIGHT IN PARIS-->
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    A Night in Paris
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body" style="background-color: white;">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home-tab" data-toggle="tab"
+                                                    href="#home" role="tab" aria-controls="home"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile-tab" data-toggle="tab"
+                                                    href="#profile" role="tab" aria-controls="profile"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages-tab" data-toggle="tab"
+                                                    href="#messages" role="tab" aria-controls="messages"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <!-- A NIGHT IN PARIS THEME TAB -->
+                                            <div class="tab-pane active" id="home" role="tabpanel"
+                                                aria-labelledby="home-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">A Night in Paris</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- A NIGHT IN PARIS FOOD TAB -->
+                                            <div class="tab-pane" id="profile" role="tabpanel"
+                                                aria-labelledby="profile-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/duck_confit.jpg" class="card-img-top"
+                                                            alt="duck_confit">
+
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/ratatouille.jpg" class="card-img-top"
+                                                            alt="ratatouille">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- A NIGHT IN PARIS DRINKS TAB -->
+                                            <div class="tab-pane" id="messages" role="tabpanel"
+                                                aria-labelledby="messages-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/french_75.jpg" class="card-img-top"
+                                                            alt="french_75">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/french_connection.jpg"
+                                                            class="card-img-top" alt="french_connection">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START IMPEACHMENT PARTY -->
+                    <div class="card">
+                        <div class="card-header" id="headingSix">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark collapsed"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                                    aria-controls="collapseSix">
+                                    Impeachment Party
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home6-tab" data-toggle="tab"
+                                                    href="#home6" role="tab" aria-controls="home6"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile6-tab" data-toggle="tab"
+                                                    href="#profile6" role="tab" aria-controls="profile6"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages6-tab" data-toggle="tab"
+                                                    href="#messages6" role="tab" aria-controls="messages6"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- IMPEACHMENT PARTY THEME TAB -->
+                                            <div class="tab-pane active" id="home6" role="tabpanel"
+                                                aria-labelledby="home6-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Impeachment Party</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- IMPEACHMENT PARTY FOOD TAB -->
+                                            <div class="tab-pane" id="profile6" role="tabpanel"
+                                                aria-labelledby="profile6-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/beef_stroganoff.jpg"
+                                                            class="card-img-top" alt="beef_stroganoff">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- IMPEACHMENT PARTY DRINKS TAB -->
+                                            <div class="tab-pane" id="messages6" role="tabpanel"
+                                                aria-labelledby="messages6-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/moscow_mule.jpg" class="card-img-top"
+                                                            alt="moscow_mule">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/orange_whip.jpg" class="card-img-top"
+                                                            alt="orange_whip">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/dark_and_stormy.jpg"
+                                                            class="card-img-top" alt="dark_and_stormy">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START REDNECK YACHT CLUB -->
+                    <div class="card">
+                        <div class="card-header" id="headingTen">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link text-dark collapsed"
+                                    style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
+                                    data-toggle="collapse" data-target="#collapseTen" aria-expanded="false"
+                                    aria-controls="collapseTen">Redneck Yacht Club</button>
+                            </h2>
+                        </div>
+                        <div id="collapseTen" class="collapse" aria-labelledby="headingTen"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark active" id="home10-tab" data-toggle="tab"
+                                                    href="#home10" role="tab" aria-controls="home10"
+                                                    aria-selected="true">Theme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="profile10-tab" data-toggle="tab"
+                                                    href="#profile10" role="tab" aria-controls="profile10"
+                                                    aria-selected="false">Food</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" id="messages10-tab" data-toggle="tab"
+                                                    href="#messages10" role="tab" aria-controls="messages10"
+                                                    aria-selected="false">Drinks</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- REDNECK YACHT CLUB THEME TAB -->
+                                            <div class="tab-pane active" id="home10" role="tabpanel"
+                                                aria-labelledby="home10-tab">
+                                                <div class="jumbotron jumbotron-fluid">
+                                                    <div class="container">
+                                                        <h1 class="display-4">Redneck Yacht Club</h1>
+                                                        <p class="lead">This is a modified jumbotron that occupies the
+                                                            entire horizontal space of its parent.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- REDNECK YACHT CLUB FOOD TAB -->
+                                            <div class="tab-pane" id="profile10" role="tabpanel"
+                                                aria-labelledby="profile10-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/KFC.jpg" class="card-img-top"
+                                                            alt="kentucy_fried_chicken">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- REDNECK YACHT CLUB DRINKS TAB -->
+                                            <div class="tab-pane" id="messages10" role="tabpanel"
+                                                aria-labelledby="messages10-tab">
+                                                <div class="card-columns">
+                                                    <div class="card">
+                                                        <img src="assets/images/kentucky_b_b.jpg" class="card-img-top"
+                                                            alt="kentucky_b_b">
+                                                    </div>
+                                                    <div class="card">
+                                                        <img src="assets/images/bible_belt.jpg" class="card-img-top"
+                                                            alt="bible_belt">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START NEXT THEME -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="assets/js/themes.js"></script>
+<!-- BOOTSTRAP JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
