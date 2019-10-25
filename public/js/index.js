@@ -110,19 +110,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "/api/build",
+      url: "/api/themes",
       data: JSON.stringify(newTheme)
     });
   },
   getBuildTheme: function() {
     return $.ajax({
-      url: "/api/build",
+      url: "/api/themes",
       type: "GET"
     });
   },
   deleteBuildTheme: function(id) {
     return $.ajax({
-      url: "/api/build" + id,
+      url: "/api/themes" + id,
       type: "DELETE"
     });
   }
