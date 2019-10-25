@@ -29,7 +29,7 @@ module.exports = function(app) {
   // });
 
   // POST route for creating a new build a theme into DB by grabbing name, drinks and food from model
-  app.post("/api/build", function(req, res) {
+  app.post("/api/themes", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our Themes table. In this case we just we pass in an object with a text
     // and complete property (req.body)
