@@ -1,24 +1,39 @@
 var db = require("../models");
 
 module.exports = function(app) {
-    // Get all examples
-    app.get("/api/examples", function(req, res) {
-        db.Example.findAll({}).then(function(dbExamples) {
-            res.json(dbExamples);
-        });
+  // Get all themes
+  app.get("/api/themes/", function(req, res) {
+    db.Theme.findAll({}).then(function(dbPost) {
+      res.json(dbPost);
     });
+  });
 
-    // Create a new example
-    app.post("/api/examples", function(req, res) {
-        db.Example.create(req.body).then(function(dbExample) {
-            res.json(dbExample);
-        });
-    });
+  // POST route for creating a new build a theme into DB by grabbing name, drinks and food from model
+  app.post("/api/build", function(req, res) {
+    // create takes an argument of an object describing the item we want to
+    // insert into our Themes table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.Theme.create({
+      text: req.body.text,
+      complete: req.body.complete
+    })
+      .then(function(foodDrink) {
+        // We have access to the new theme as an argument inside of the callback function
+        res.json(foodDrink);
+      })
+      .catch(function(err) {
+        // Whenever a validation or flag fails, an error is thrown
+        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+        res.json(err);
+      });
+  });
 
-    // Delete an example by id
-    app.delete("/api/examples/:id", function(req, res) {
-        db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-            res.json(dbExample);
-        });
+  //delete POST request here
+  app.delete("/api/themes/:id", function(req, res) {
+    db.Theme.destroy({ where: { id: req.params.id } }).then(function(Theme) {
+      res.json(Theme);
     });
+  });
 };
+
+// Delete an example by id
