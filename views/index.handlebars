@@ -10,9 +10,10 @@
             </h5>
         </div>
         <div class="animated flipInX delay-1s row justify-content-md-center pb-5">
-            <button type="button" id="view-themes" class="btn btn-outline-light m-2" style="background-color: #d78c26"
-                data-container="body" data-toggle="popover" data-placement="left"
-                data-content="Check out our ready-made party themes to get your start.">VIEW PARTY THEMES</button>
+            <a href="/themes"><button type="button" id="view-themes" class="btn btn-outline-light m-2"
+                    style="background-color: #d78c26" data-container="body" data-toggle="popover" data-placement="left"
+                    data-content="Check out our ready-made party themes to get your start.">VIEW PARTY
+                    THEMES</button></a>
             <button type="button" id="build-themes" class="btn btn-outline-light m-2" style="background-color: #d78c26"
                 data-container="body" data-toggle="modal" data-target="#exampleModal" data-placement="right"
                 data-content="Search categories to create you own theme.">BUILD A THEME</button>
@@ -46,25 +47,26 @@
                 </div>
             </div>
         </div>
-       
-        <!-- Makes the theme_name field required, a theme_name and does a remote request to check if the given theme name is already taken. In addition, the http method is set to "post" and the theme name is sent -->
-        <script type="text/javascript">
-            $("#myform").validate({
-                rules: {
-                    theme_name: {
-                        required: true,
-                        theme_name: true,
-                        remote: {
-                            url: "schema.sql",
-                            type: "post",
-                            data: {
-                                theme_name: function () {
-                                    return $("#theme_name").val();
-                                }
+    </div>
+
+    <!-- Makes the theme_name field required, a theme_name and does a remote request to check if the given theme name is already taken. In addition, the http method is set to "post" and the theme name is sent -->
+    <script type="text/javascript">
+        $("#myform").validate({
+            rules: {
+                theme_name: {
+                    required: true,
+                    theme_name: true,
+                    remote: {
+                        url: "schema.sql",
+                        type: "post",
+                        data: {
+                            theme_name: function () {
+                                return $("#theme_name").val();
                             }
                         }
                     }
                 }
-            });
-        </script>
+            }
+        });
+    </script>
 </body>
