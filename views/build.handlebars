@@ -4,9 +4,9 @@
 
         <!--Side-Nav Search Bar -->
         <form class="form-inline md-form form-sm">
-            <input class="form-control form-control-sm mr-3 w-80" type="text" placeholder="Search" aria-label="Search"
+            <input class="form-control form-control-sm mr-3 w-80" id="search" type="text" placeholder="Search" aria-label="Search"
                 style="margin-bottom: 20px">
-            <i class="fa fa-search" style="color:white; font-size: 25px;margin-bottom: 20px" aria-hidden="true"></i>
+            <button id="searchButton" style="background-color:transparent"><i class="fa fa-search" style="color:white; font-size: 25px;margin-bottom: 20px" aria-hidden="true"></i></button>
         </form>
     </nav>
 
@@ -14,23 +14,23 @@
     <div class="dropdown-btn">Categories
         <i class="fa fa-caret-down"></i>
     </div>
-    <div class="dropdown-container">
-        <a href="#" id="appetizers">Appetizers</a>
+    <div class="dropdown-container"> 
+        <a href="#"class="categoryOption" id="appetizers">Appetizers</a>
         <button class="dropdown-btn">Entrees
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="#" id="beef">Beef</a>
-            <a href="#" id="chicken">Chicken</a>
-            <a href="#" id="lamb">Lamb</a>
-            <a href="#" id="pork">Pork</a>
-            <a href="#" id="seafood">Seafood</a>
-            <a href="#" id="vegan">Vegan</a>
-            <a href="#" id="vegetarian">Vegetarian</a>
+            <a href="#" class="categoryOption" id="beef">Beef</a>
+            <a href="#" class="categoryOption" id="chicken">Chicken</a>
+            <a href="#" class="categoryOption" id="lamb">Lamb</a>
+            <a href="#" class="categoryOption" id="pork">Pork</a>
+            <a href="#" class="categoryOption" id="seafood">Seafood</a>
+            <a href="#" class="categoryOption" id="vegan">Vegan</a>
+            <a href="#" class="categoryOption" id="vegetarian">Vegetarian</a>
         </div>
-        <a href="#" id="drink">Drink</a>
-        <a href="#" id="sides">Sides</a>
-        <a href="#" id="dessert">Dessert</a>
+        <a href="#" class="categoryOption" id="drink">Drink</a>
+        <a href="#"class="categoryOption" id="side">Sides</a>
+        <a href="#" class="categoryOption" id="dessert">Dessert</a>
     </div>
     <button class="dropdown-btn">Themes
         <i class="fa fa-caret-down"></i>
