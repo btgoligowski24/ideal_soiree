@@ -4,6 +4,8 @@ $(document).on("click", ".card-img-top", function() {
   // alert("heyou!");
   console.log(this.src);
   console.log($(this).attr("data-id"));
+  var parent = $(this).parent();
+  parent.replaceWith("<div>Added!<div>");
 });
 
 function categories() {
