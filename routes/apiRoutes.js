@@ -8,18 +8,35 @@ module.exports = function(app) {
     });
   });
 
+  // // POST route for creating a new build a theme into DB by grabbing name, drinks and food from model
+  // app.post("/api/build", function(req, res) {
+  //   // create takes an argument of an object describing the item we want to
+  //   // insert into our Themes table. In this case we just we pass in an object with a text
+  //   // and complete property (req.body)
+  //   db.Theme.create({
+  //     text: req.body.text,
+  //     complete: req.body.complete
+  //   })
+  //     .then(function(foodDrink) {
+  //       // We have access to the new theme as an argument inside of the callback function
+  //       res.json(foodDrink);
+  //     })
+  //     .catch(function(err) {
+  //       // Whenever a validation or flag fails, an error is thrown
+  //       // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+  //       res.json(err);
+  //     });
+  // });
+
   // POST route for creating a new build a theme into DB by grabbing name, drinks and food from model
   app.post("/api/build", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our Themes table. In this case we just we pass in an object with a text
     // and complete property (req.body)
-    db.Theme.create({
-      text: req.body.text,
-      complete: req.body.complete
-    })
-      .then(function(foodDrink) {
+    db.Theme.create(req.body)
+      .then(function(newTheme) {
         // We have access to the new theme as an argument inside of the callback function
-        res.json(foodDrink);
+        res.json(newTheme);
       })
       .catch(function(err) {
         // Whenever a validation or flag fails, an error is thrown
