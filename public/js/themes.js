@@ -1,4 +1,4 @@
-///Side NavBar
+//Side NavBar
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 
