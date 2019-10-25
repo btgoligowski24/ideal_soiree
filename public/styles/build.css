@@ -3,9 +3,15 @@ body {
 }
 h1 {
   font-weight: bold;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Sofia", cursive;
+  font-size: 50px;
 }
-
+#cate,
+#theme,
+#entree {
+  font-family: "Sofia", cursive;
+  font-size: 25px;
+}
 /* Fixed sidenav, full height */
 .sidenav {
   height: 100%;
