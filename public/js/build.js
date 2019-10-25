@@ -5,7 +5,13 @@ $(document).on("click", ".card-img-top", function() {
   console.log(this.src);
   console.log($(this).attr("data-id"));
   var parent = $(this).parent();
-  parent.replaceWith("<div>Added!<div>");
+  parent.css({
+    opacity: "0.5",
+    filter: "alpha(opacity=50)",
+    "background-color": "#d78c26",
+    border: "solid #d78c26 10px"
+  });
+  parent.attr("class", "animated zoomIn delay=2s");
 });
 
 function categories() {
