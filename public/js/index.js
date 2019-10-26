@@ -140,7 +140,10 @@ var handleFormSubmit = function(event) {
     alert("You must enter a theme name!");
     return;
   }
-  API.saveBuildTheme(newTheme);
+  API.saveBuildTheme(newTheme).then(function(data) {
+    var queryStr = "?id=" + data.id + "&name=" + data.name;
+    window.location.href = "/build" + queryStr;
+  });
 
   $newBuildTheme.val("");
 };

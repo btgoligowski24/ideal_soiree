@@ -3,8 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all themes
   app.get("/api/themes/", function(req, res) {
-    db.Theme.findAll({}).then(function(dbPost) {
-      res.json(dbPost);
+    db.Theme.findAll({}).then(function(dbThemes) {
+      res.json(dbThemes);
     });
   });
 
@@ -28,7 +28,25 @@ module.exports = function(app) {
   //     });
   // });
 
-  // POST route for creating a new build a theme into DB by grabbing name, drinks and food from model
+  // POST route for creating foodDrinks into DB
+  app.post("/api/build", function(req, res) {
+    // create takes an argument of an object describing the item we want to
+    // insert into our Themes table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.foodDrink
+      .create(req.body)
+      .then(function(newFoodDrink) {
+        // We have access to the new foodDrink as an argument inside of the callback function
+        res.json(newFoodDrink);
+      })
+      .catch(function(err) {
+        // Whenever a validation or flag fails, an error is thrown
+        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+        res.json(err);
+      });
+  });
+
+  // POST route for creating a new build a theme into DB by grabbing name
   app.post("/api/themes", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our Themes table. In this case we just we pass in an object with a text
