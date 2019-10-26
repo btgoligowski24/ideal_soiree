@@ -1,5 +1,24 @@
-//Onclick Image
+function insertTheme() {
+  var url = decodeURIComponent(window.location.search);
+  var name = url
+    .split("&")
+    .slice(1)
+    .toString();
+  var themeId = url
+    .split("&")
+    .slice(0, 1)
+    .toString();
+  var nameIndex;
+  var idIndex;
+  nameIndex = name.indexOf("=") + 1;
+  idIndex = themeId.indexOf("=") + 1;
+  name = name.slice(nameIndex);
+  themeId = themeId.slice(idIndex);
+  $("#currentThemeName").text("View " + name + " Selections");
+  $("#currentThemeId").attr({ "data-id": themeId });
+}
 
+//Onclick Image
 $(document).on("click", ".card-img-top", function() {
   // alert("heyou!");
   console.log(this.src);
@@ -168,3 +187,5 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
+
+insertTheme();
