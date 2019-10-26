@@ -28,10 +28,9 @@ $(document).on("click", ".card-img-top", function() {
   parent.css({
     opacity: "0.5",
     filter: "alpha(opacity=50)",
-    "background-color": "#d78c26",
-    border: "solid #d78c26 10px"
+    "box-shadow": "5px 10px 8px #888888"
   });
-  parent.attr("class", "animated zoomIn delay=2s");
+  parent.attr("class", "animated heartBeat delay=2s");
 
   //Onclick Function to pass in ID to a new Ajax call
   if (itemClassification === "drink") {
@@ -119,7 +118,7 @@ $(document).on("click", ".card-img-top", function() {
   });
 });
 
-//Render Categories Function
+//Categories Function
 function categories() {
   const category = $(this).attr("id");
   let queryURL;
@@ -148,13 +147,14 @@ function categories() {
     }
 
     for (var i = 0; i < results.length; i++) {
-      var boxDiv = $("<div>");
-      boxDiv.attr("class", "box");
       var button = $("<button>");
       button.attr("class", "btn btn-light rounded");
-      boxDiv.append(button);
       var mealThumb = $("<img>");
       mealThumb.attr("class", "card-img-top rounded");
+      mealThumb.css({
+        "box-shadow": "5px 10px 8px #888888",
+        border: "solid white 15px"
+      });
 
       if (category === "drink") {
         mealThumb.attr({
@@ -180,9 +180,13 @@ $(".dropdown-container").on("click", ".categoryOption", categories);
 //SaveButton
 $(document).on("click", "#saveButton", function() {
   alert("Hiiiii!!!");
+  var checkBox = $("<i>");
+  checkBox.attr("class", "fa fa-check");
+  $("#saveButton").prepend(checkBox);
+  $("#saveButton").replaceWith(checkBox);
 });
 
-// //Search Category Function
+//Search Category Function
 $("#searchButton").on("click", function(event) {
   event.preventDefault();
   // This line grabs the input from the textbox
@@ -224,12 +228,13 @@ $("#searchButton").on("click", function(event) {
           );
         } else {
           for (var i = 0; i < results.length; i++) {
-            var boxDiv = $("<div>");
-            boxDiv.attr("class", "box");
             var button = $("<button>");
             button.attr("class", "btn btn-light");
-            boxDiv.append(button);
             var mealThumb = $("<img>");
+            mealThumb.css({
+              "box-shadow": "5px 10px 8px #888888",
+              border: "solid white 15px"
+            });
             mealThumb.attr({
               class: "card-img-top",
               src: results[i].strDrinkThumb,
@@ -243,12 +248,13 @@ $("#searchButton").on("click", function(event) {
       });
     } else {
       for (var i = 0; i < results.length; i++) {
-        var boxDiv = $("<div>");
-        boxDiv.attr("class", "box");
         var button = $("<button>");
         button.attr("class", "btn btn-light");
-        boxDiv.append(button);
         var mealThumb = $("<img>");
+        mealThumb.css({
+          "box-shadow": "5px 10px 8px #888888",
+          border: "solid white 15px"
+        });
 
         mealThumb.attr({
           class: "card-img-top",
