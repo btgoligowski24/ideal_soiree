@@ -41,34 +41,34 @@
     <div class="container-fluid">
         <div class="navbar-header">
         </div>
+
         <ul class="nav navbar-nav navbar-right">
 
             <!--View Selections Button-->
             <li>
                 <div class="dropdown">
-                    <button id="currentTheme" type="button" class="dropbtn rounded">
+                    <button id="currentTheme" type="button" class="dropbtn rounded navbar-btn">
                     </button>
-              <button class="btn btn-dark" id="saveButton">Save</button>
-
                     <div id="selectedItems" class="dropdown-content">
                     </div>
                 </div>
+                <button class="btn btn-dark navbar-btn" id="saveButton">Save</button>
             </li>
         </ul>
-
     </div>
 </nav>
 <div class="main" style="text-align: center;">
-    <h1>Build A Theme</h1>
-    <p>Click on the category dropdown to choose food or drinks options for your party. You can search for a food or
-        drink as well in the search. Select items to add to your Party theme!</p>
-    <br>
+    <div class="container">
+        <h1>Build A Theme</h1>
+        <p>Click on the category dropdown to choose food or drinks options for your party. You can search for a food or
+            drink as well in the search. Select items to add to your Party theme!</p>
 
-    <!--Search Bar Results Section-->
-    <div id="results">
-        <p id="title"></p>
+        <!--Search Bar Results Section-->
+        <div id="results">
+            <p id="title"></p>
+        </div>
     </div>
-    <br>
+</div>
 
-    <!--Scripts-->
-    <script src="/js/build.js"></script>
+<!--Scripts-->
+<script src="/js/build.js"></script>
