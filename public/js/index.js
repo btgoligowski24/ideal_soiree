@@ -140,10 +140,14 @@ var handleFormSubmit = function(event) {
     alert("You must enter a theme name!");
     return;
   }
-  API.saveBuildTheme(newTheme).then(function(data) {
-    var queryStr = "?id=" + data.id + "&name=" + data.name;
-    window.location.href = "/build" + queryStr;
-  });
+  API.saveBuildTheme(newTheme)
+    .then(function(data) {
+      var queryStr = "?id=" + data.id + "&name=" + data.name;
+      window.location.href = "/build" + queryStr;
+    })
+    .catch(function(err) {
+      alert(err.responseText);
+    });
 
   $newBuildTheme.val("");
 };
