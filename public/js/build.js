@@ -127,6 +127,11 @@ function categories() {
 
 $(".dropdown-container").on("click", ".categoryOption", categories);
 
+//SaveButton
+$(document).on("click", "#saveButton", function() {
+  alert("Hiiiii!!!");
+});
+
 // //Search Category Function
 $("#searchButton").on("click", function(event) {
   event.preventDefault();
@@ -141,7 +146,6 @@ $("#searchButton").on("click", function(event) {
 
   console.log(category);
 
-  //First API CALL TO SEARCH MEALS DB
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -151,7 +155,6 @@ $("#searchButton").on("click", function(event) {
     var results = response.meals;
 
     if (results === null) {
-      //Second API CALL TO SEARCH Drinks DB
       queryURL =
         "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
         category +
