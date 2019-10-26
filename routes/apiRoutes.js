@@ -51,27 +51,34 @@ module.exports = function(app) {
     // create takes an argument of an object describing the item we want to
     // insert into our Themes table. In this case we just we pass in an object with a text
     // and complete property (req.body)
-    db.Theme.findAll({}).then(function(themes) {
-      for (var theme in themes) {
-        if (req.body.name.toLowerCase() === themes[theme].name.toLowerCase()) {
+
+    db.sequelize
+      .query("SELECT * FROM themes WHERE LOWER(name) = :theme LIMIT 1", {
+        replacements: {
+          theme: req.body.name.toLowerCase()
+        },
+        type: db.sequelize.QueryTypes.SELECT
+      })
+      .then(function(themes) {
+        if (themes) {
           res
             .status(406)
             .send(
               "Theme Already Exists! Check out our themes page or try a different name."
             );
+        } else {
+          db.Theme.create(req.body)
+            .then(function(newTheme) {
+              // We have access to the new theme as an argument inside of the callback function
+              res.json(newTheme);
+            })
+            .catch(function(err) {
+              // Whenever a validation or flag fails, an error is thrown
+              // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+              res.json(err);
+            });
         }
-      }
-      db.Theme.create(req.body)
-        .then(function(newTheme) {
-          // We have access to the new theme as an argument inside of the callback function
-          res.json(newTheme);
-        })
-        .catch(function(err) {
-          // Whenever a validation or flag fails, an error is thrown
-          // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-          res.json(err);
-        });
-    });
+      });
   });
 
   //delete POST request here
