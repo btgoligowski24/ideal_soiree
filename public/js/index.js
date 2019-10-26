@@ -99,7 +99,8 @@
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 // Get references to page elements
-var $newBuildTheme = $("#theme_name");
+var $newBuildThemeName = $("#theme_name");
+var $newBuildThemeDesc = $("#theme_description");
 var $submitBtn = $("#submitTheme");
 
 // The API object contains methods for each kind of request we'll make
@@ -110,19 +111,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "/api/build",
+      url: "/api/themes",
       data: JSON.stringify(newTheme)
     });
   },
   getBuildTheme: function() {
     return $.ajax({
-      url: "/api/build",
+      url: "/api/themes",
       type: "GET"
     });
   },
   deleteBuildTheme: function(id) {
     return $.ajax({
-      url: "/api/build" + id,
+      url: "/api/themes" + id,
       type: "DELETE"
     });
   }
@@ -132,17 +133,25 @@ var API = {
 // Save the new newTheme to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
-  console.log($newBuildTheme);
   var newTheme = {
-    name: $newBuildTheme.val().trim()
+    name: $newBuildThemeName.val().trim(),
+    description: $newBuildThemeDesc.val().trim()
   };
   if (!newTheme.name) {
     alert("You must enter a theme name!");
     return;
   }
-  API.saveBuildTheme(newTheme);
+  API.saveBuildTheme(newTheme)
+    .then(function(data) {
+      var queryStr = "?id=" + data.id + "&name=" + data.name;
+      window.location.href = "/build" + queryStr;
+    })
+    .catch(function(err) {
+      alert(err.responseText);
+    });
 
-  $newBuildTheme.val("");
+  $newBuildThemeName.val("");
+  $newBuildThemeDesc.val("");
 };
 
 // Add event listeners to the submit and delete buttons

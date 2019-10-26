@@ -1,3 +1,23 @@
+function insertTheme() {
+  var url = decodeURIComponent(window.location.search);
+  var name = url
+    .split("&")
+    .slice(1)
+    .toString();
+  var themeId = url
+    .split("&")
+    .slice(0, 1)
+    .toString();
+  var nameIndex;
+  var idIndex;
+  nameIndex = name.indexOf("=") + 1;
+  idIndex = themeId.indexOf("=") + 1;
+  name = name.slice(nameIndex);
+  themeId = themeId.slice(idIndex);
+  $("#currentTheme").text("View " + name + " Selections");
+  $("#currentTheme").attr({ "data-id": themeId });
+}
+
 //Onclick Image
 $(document).on("click", ".card-img-top", function() {
   var clickId = $(this).attr("data-id");
@@ -207,3 +227,5 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
+
+insertTheme();
