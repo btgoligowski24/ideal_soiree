@@ -4,9 +4,10 @@
 
         <!--Side-Nav Search Bar -->
         <form class="form-inline md-form form-sm">
-            <input class="form-control form-control-sm mr-3 w-80" id="search" type="text" placeholder="Search" aria-label="Search"
-                style="margin-bottom: 20px">
-            <button id="searchButton" style="background-color:transparent"><i class="fa fa-search" style="color:white; font-size: 25px;margin-bottom: 20px" aria-hidden="true"></i></button>
+            <input class="form-control form-control-sm mr-3 w-80" id="search" type="text" placeholder="Search"
+                aria-label="Search" style="margin-bottom: 20px">
+            <button id="searchButton" style="background-color:transparent"><i class="fa fa-search"
+                    style="color:white; font-size: 25px;margin-bottom: 20px" aria-hidden="true"></i></button>
         </form>
     </nav>
 
@@ -14,8 +15,8 @@
     <div class="dropdown-btn" id="cate">Categories
         <i class="fa fa-caret-down"></i>
     </div>
-    <div class="dropdown-container"> 
-        <a href="#"class="categoryOption" id="starter">Appetizers</a>
+    <div class="dropdown-container">
+        <a href="#" class="categoryOption" id="starter">Appetizers</a>
         <button class="dropdown-btn" id="entree">Entrees
             <i class="fa fa-caret-down"></i>
         </button>
@@ -29,17 +30,10 @@
             <a href="#" class="categoryOption" id="vegetarian">Vegetarian</a>
         </div>
         <a href="#" class="categoryOption" id="drink">Drink</a>
-        <a href="#"class="categoryOption" id="side">Sides</a>
+        <a href="#" class="categoryOption" id="side">Sides</a>
         <a href="#" class="categoryOption" id="dessert">Dessert</a>
     </div>
-    <button class="dropdown-btn" id="theme">Themes
-        <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-        <a href="#">Popular</a>
-        <a href="#">Holiday</a>
-        <a href="#">Kids</a>
-    </div>
+      <a href="/themes"id="theme">Go back to themes</a>
 </div>
 
 <!--Page Header-->
@@ -50,21 +44,26 @@
         <ul class="nav navbar-nav navbar-right">
 
             <!--View Selections Button-->
-            <li><button id="currentThemeId" type="button" class="btn btn-dark"><a id="currentThemeName" href="#" style="color:white">
-                        </a></button></li>
+            <li>
+                <div class="dropdown">
+                    <button id="currentTheme" type="button" class="dropbtn rounded"></button>
+                    <div id="selectedItems" class="dropdown-content">
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
 <div class="main" style="text-align: center;">
     <h1>Build A Theme</h1>
+    <p>Click on the category dropdown to choose food or drinks options for your party. You can search for a food or drink as well in the search. Select items to add to your Party theme!</p>
     <br>
 
     <!--Search Bar Results Section-->
-    <div id ="results">
-    <p id="title"></p>
+    <div id="results">
+        <p id="title"></p>
     </div>
     <br>
 
-                    <!--Scripts-->
-     <script src="/js/build.js"></script>
-     
+    <!--Scripts-->
+    <script src="/js/build.js"></script>

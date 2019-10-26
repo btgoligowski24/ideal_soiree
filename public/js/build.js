@@ -14,15 +14,20 @@ function insertTheme() {
   idIndex = themeId.indexOf("=") + 1;
   name = name.slice(nameIndex);
   themeId = themeId.slice(idIndex);
-  $("#currentThemeName").text("View " + name + " Selections");
-  $("#currentThemeId").attr({ "data-id": themeId });
+  $("#currentTheme").text("View " + name + " Selections");
+  $("#currentTheme").attr({ "data-id": themeId });
 }
 
 //Onclick Image
 $(document).on("click", ".card-img-top", function() {
-  // alert("heyou!");
-  console.log(this.src);
-  console.log($(this).attr("data-id"));
+  var clickId = $(this).attr("data-id");
+  var itemClassification = $(this).attr("data-classification");
+  var img = this.src;
+  var queryURL;
+
+  console.log(clickId);
+  console.log(img);
+
   var parent = $(this).parent();
   parent.css({
     opacity: "0.5",
@@ -31,8 +36,40 @@ $(document).on("click", ".card-img-top", function() {
     border: "solid #d78c26 10px"
   });
   parent.attr("class", "animated zoomIn delay=2s");
+  //Onclick Function to pass in ID to a new Ajax call
+
+  if (itemClassification === "drink") {
+    queryURL =
+      "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + clickId;
+  } else {
+    queryURL =
+      "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + clickId;
+  }
+
+  console.log(clickId);
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+    var results;
+    var newAElem = $('<a href="#">');
+
+    if (itemClassification === "drink") {
+      results = response.drinks[0].strDrink;
+    } else {
+      results = response.meals[0].strMeal;
+    }
+
+    $(newAElem).text(results);
+    console.log(results);
+
+    $("#selectedItems").append(newAElem);
+  });
 });
 
+//Render Categories Function
 function categories() {
   const category = $(this).attr("id");
   let queryURL;
@@ -46,7 +83,6 @@ function categories() {
       category +
       "&apikey=1";
   }
-
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -65,20 +101,22 @@ function categories() {
       var boxDiv = $("<div>");
       boxDiv.attr("class", "box");
       var button = $("<button>");
-      button.attr("class", "btn btn-light");
+      button.attr("class", "btn btn-light rounded");
       boxDiv.append(button);
       var mealThumb = $("<img>");
-      mealThumb.attr("class", "card-img-top");
+      mealThumb.attr("class", "card-img-top rounded");
 
       if (category === "drink") {
         mealThumb.attr({
           src: results[i].strDrinkThumb,
-          "data-id": results[i].idDrink
+          "data-id": results[i].idDrink,
+          "data-classification": "drink"
         });
       } else {
         mealThumb.attr({
           src: results[i].strMealThumb,
-          "data-id": results[i].idMeal
+          "data-id": results[i].idMeal,
+          "data-classification": "meal"
         });
       }
       button.append(mealThumb);
@@ -89,7 +127,7 @@ function categories() {
 
 $(".dropdown-container").on("click", ".categoryOption", categories);
 
-// //Search Function
+// //Search Category Function
 $("#searchButton").on("click", function(event) {
   event.preventDefault();
   // This line grabs the input from the textbox
@@ -129,7 +167,7 @@ $("#searchButton").on("click", function(event) {
 
         if (results === null) {
           $("#results").html(
-            "Ooops! Sorry there are no results for your search!"
+            "<h2>Ooops! Sorry there are no results for your search!</h2>"
           );
         } else {
           for (var i = 0; i < results.length; i++) {
@@ -142,7 +180,8 @@ $("#searchButton").on("click", function(event) {
             mealThumb.attr({
               class: "card-img-top",
               src: results[i].strDrinkThumb,
-              "data-id": results[i].idDrink
+              "data-id": results[i].idDrink,
+              "data-classification": "drink"
             });
             button.append(mealThumb);
             $("#results").prepend(button);
@@ -162,7 +201,8 @@ $("#searchButton").on("click", function(event) {
         mealThumb.attr({
           class: "card-img-top",
           src: results[i].strMealThumb,
-          "data-id": results[i].idMeal
+          "data-id": results[i].idMeal,
+          "data-classification": "meal"
         });
         button.append(mealThumb);
         $("#results").prepend(button);
