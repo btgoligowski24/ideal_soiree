@@ -1,13 +1,20 @@
+/* top nav */
+
+#topNav {
+    padding-left: 18%;
+}
+
+
 /* Fixed sidenav, full height */
 
 .sidenav {
     height: 100%;
-    width: 230x;
-    position: fixed;
+    width: 15%;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #111;
+    position: fixed;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -19,7 +26,7 @@
 .dropdown-btn {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: #818181;
     display: block;
     border: none;
@@ -36,6 +43,26 @@
 .sidenav a:hover,
 .dropdown-btn:hover {
     color: #f1f1f1;
+}
+
+
+/* Style the caret down icon */
+
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+
+/* Some media queries for responsiveness */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
 
 
@@ -111,10 +138,6 @@
     color: grey;
 }
 
-#collapseOne {
-    background-color: whitesmoke;
-}
-
 .card-columns {
     padding: 15px;
     margin: 0px;
@@ -124,33 +147,4 @@ img:hover {
     opacity: 0.5;
     filter: alpha(opacity=50);
     /* For IE8 and earlier */
-}
-
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-
-.dropdown-container {
-    display: none;
-    background-color: #262626;
-    padding-left: 8px;
-}
-
-
-/* Optional: Style the caret down icon */
-
-.fa-caret-down {
-    float: right;
-    padding-right: 8px;
-}
-
-
-/* Some media queries for responsiveness */
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-    .sidenav a {
-        font-size: 18px;
-    }
 }
