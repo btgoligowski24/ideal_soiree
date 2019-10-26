@@ -18,8 +18,37 @@ function insertTheme() {
   $("#currentTheme").attr({ "data-id": themeId });
 }
 
+function saveSelections() {
+  const chosenItems = $("#selectedItems").children();
+  let itemArr = [];
+  for (let i = 0; i < chosenItems.length; i++) {
+    const newItem = {
+      name: $(chosenItems[i]).attr("data-name"),
+      imageurl: $(chosenItems[i]).attr("data-imageurl"),
+      apiid: $(chosenItems[i]).attr("data-apiid"),
+      classification: $(chosenItems[i]).attr("data-classification"),
+      ingredients: $(chosenItems[i]).attr("data-ingredients"),
+      instructions: $(chosenItems[i]).attr("data-instructions"),
+      themeid: $(chosenItems[i]).attr("data-themeid")
+    };
+    itemArr.push(newItem);
+  }
+
+  $.ajax({
+    headers: {
+      "Content-Type": "application/json"
+    },
+    type: "POST",
+    url: "/api/build",
+    data: JSON.stringify(itemArr)
+  });
+}
+
 //Onclick Image
-$(document).on("click", ".card-img-top", function() {
+$(document).on("click", ".notSelected", function() {
+  $(this)
+    .removeClass("notSelected")
+    .addClass("selected");
   var clickId = $(this).attr("data-id");
   var itemClassification = $(this).attr("data-classification");
   var queryURL;
@@ -154,7 +183,7 @@ function categories() {
       button.attr("class", "btn btn-light rounded");
       boxDiv.append(button);
       var mealThumb = $("<img>");
-      mealThumb.attr("class", "card-img-top rounded");
+      mealThumb.attr("class", "card-img-top rounded notSelected");
 
       if (category === "drink") {
         mealThumb.attr({
@@ -178,23 +207,19 @@ function categories() {
 $(".dropdown-container").on("click", ".categoryOption", categories);
 
 //SaveButton
-$(document).on("click", "#saveButton", function() {
-  alert("Hiiiii!!!");
-});
+$("#saveButton").on("click", saveSelections);
 
-// //Search Category Function
+// //Search Function
 $("#searchButton").on("click", function(event) {
   event.preventDefault();
   // This line grabs the input from the textbox
-  var category = $("#search")
+  var searchTerm = $("#search")
     .val()
     .trim();
   var queryURL =
     "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
-    category +
+    searchTerm +
     "&apikey=1";
-
-  console.log(category);
 
   $.ajax({
     url: queryURL,
@@ -207,7 +232,7 @@ $("#searchButton").on("click", function(event) {
     if (results === null) {
       queryURL =
         "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
-        category +
+        searchTerm +
         "&apikey=1";
 
       $.ajax({
@@ -231,7 +256,7 @@ $("#searchButton").on("click", function(event) {
             boxDiv.append(button);
             var mealThumb = $("<img>");
             mealThumb.attr({
-              class: "card-img-top",
+              class: "card-img-top notSelected",
               src: results[i].strDrinkThumb,
               "data-id": results[i].idDrink,
               "data-classification": "drink"
