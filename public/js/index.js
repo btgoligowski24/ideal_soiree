@@ -99,7 +99,8 @@
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 // Get references to page elements
-var $newBuildTheme = $("#theme_name");
+var $newBuildThemeName = $("#theme_name");
+var $newBuildThemeDesc = $("#theme_description");
 var $submitBtn = $("#submitTheme");
 
 // The API object contains methods for each kind of request we'll make
@@ -132,9 +133,9 @@ var API = {
 // Save the new newTheme to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
-  console.log($newBuildTheme);
   var newTheme = {
-    name: $newBuildTheme.val().trim()
+    name: $newBuildThemeName.val().trim(),
+    description: $newBuildThemeDesc.val().trim()
   };
   if (!newTheme.name) {
     alert("You must enter a theme name!");
@@ -149,7 +150,8 @@ var handleFormSubmit = function(event) {
       alert(err.responseText);
     });
 
-  $newBuildTheme.val("");
+  $newBuildThemeName.val("");
+  $newBuildThemeDesc.val("");
 };
 
 // Add event listeners to the submit and delete buttons
