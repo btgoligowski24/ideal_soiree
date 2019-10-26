@@ -8,7 +8,8 @@ h1 {
 }
 #cate,
 #theme,
-#entree {
+#entree,
+#home {
   font-family: "Sofia", cursive;
   font-size: 25px;
 }
@@ -18,6 +19,7 @@ p {
 #saveButton {
   padding: 15px;
   background-color: gray;
+  line-height: 25px;
   border: none;
 }
 
@@ -146,9 +148,9 @@ img:hover {
   opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
 }
-#theme {
-  position: fixed;
-  top: 90%;
+#theme,
+#home {
+  position: relative;
 }
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
