@@ -25,7 +25,7 @@ module.exports = function(app) {
       res.render("themes", {
         title: "Pre-Existing Themes",
         style: "themes.css",
-        description: "See our predefined themes.",
+        description: "See the themes that already exist.",
         themes: themes
       });
     });
