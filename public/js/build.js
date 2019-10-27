@@ -179,12 +179,11 @@ function categories() {
       var button = $("<button>");
       button.attr("class", "btn btn-light rounded");
       var mealThumb = $("<img>");
-
-      mealThumb.attr("class", "card-img-top rounded notSelected");
       mealThumb.css({
         "box-shadow": "5px 10px 8px #888888",
         border: "solid white 15px"
       });
+      mealThumb.attr("class", "card-img-top rounded notSelected");
 
       if (category === "drink") {
         mealThumb.attr({
