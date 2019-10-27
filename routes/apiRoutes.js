@@ -35,12 +35,10 @@ module.exports = function(app) {
       })
     )
       .then(function(foodDrinks) {
-        console.log("pass");
-        res.redirect("/themes");
+        res.status(200);
       })
       .catch(function(err) {
-        console.log("fail");
-        res.json(err);
+        res.status(400).send("Oops, something went wrong!");
       });
   });
 
