@@ -8,42 +8,39 @@ module.exports = function(app) {
     });
   });
 
-  // // POST route for creating a new build a theme into DB by grabbing name, drinks and food from model
-  // app.post("/api/build", function(req, res) {
-  //   // create takes an argument of an object describing the item we want to
-  //   // insert into our Themes table. In this case we just we pass in an object with a text
-  //   // and complete property (req.body)
-  //   db.Theme.create({
-  //     text: req.body.text,
-  //     complete: req.body.complete
-  //   })
-  //     .then(function(foodDrink) {
-  //       // We have access to the new theme as an argument inside of the callback function
-  //       res.json(foodDrink);
-  //     })
-  //     .catch(function(err) {
-  //       // Whenever a validation or flag fails, an error is thrown
-  //       // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-  //       res.json(err);
-  //     });
-  // });
-
-  // POST route for creating foodDrinks into DB
+  // POST route for creating foodDrinks into DB uniquely based on apiid and themeid
   app.post("/api/build", function(req, res) {
-    // create takes an argument of an object describing the item we want to
-    // insert into our Themes table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
-    db.foodDrink
-      .create(req.body)
-      .then(function(newFoodDrink) {
-        // We have access to the new foodDrink as an argument inside of the callback function
-        res.json(newFoodDrink);
+    var items = req.body;
+
+    Promise.all(
+      items.map(function(value) {
+        return db.foodDrink
+          .findOrCreate({
+            where: {
+              apiID: value.apiid,
+              ThemeId: value.themeid
+            },
+            defaults: {
+              name: value.name,
+              imageURL: value.imageurl,
+              classification: value.classification,
+              apiID: value.apiid,
+              ingredients: value.ingredients,
+              instructions: value.instructions,
+              ThemeId: value.themeid
+            }
+          })
+          .spread(function(itemResult, created) {
+            // itemResult is the foodDrink instance
+
+            if (created) {
+              // created will be true if a new foodDrink was created
+            } else {
+              console.log("This item already belongs to this theme.");
+            }
+          });
       })
-      .catch(function(err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-        res.json(err);
-      });
+    );
   });
 
   // POST route for creating a new build a theme into DB by grabbing name
@@ -60,7 +57,7 @@ module.exports = function(app) {
         type: db.sequelize.QueryTypes.SELECT
       })
       .then(function(themes) {
-        if (themes) {
+        if (themes.length > 0) {
           res
             .status(406)
             .send(
@@ -92,5 +89,3 @@ module.exports = function(app) {
     });
   });
 };
-
-// Delete an example by id
