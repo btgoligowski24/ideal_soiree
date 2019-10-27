@@ -1,13 +1,6 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all themes
-  app.get("/api/themes/", function(req, res) {
-    db.Theme.findAll({}).then(function(dbThemes) {
-      res.json(dbThemes);
-    });
-  });
-
   // POST route for creating foodDrinks into DB uniquely based on apiid and themeid
   app.post("/api/build", function(req, res) {
     var items = req.body;
@@ -23,7 +16,7 @@ module.exports = function(app) {
             defaults: {
               name: value.name,
               imageURL: value.imageurl,
-              classification: value.classification,
+              isMeal: value.ismeal,
               apiID: value.apiid,
               ingredients: value.ingredients,
               instructions: value.instructions,
