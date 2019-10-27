@@ -2,23 +2,30 @@ body {
   font-family: "Lato", sans-serif;
 }
 h1 {
-  font-weight: bold;
   font-family: "Sofia", cursive;
-  font-size: 50px;
+  font-size: 60px;
 }
 #cate,
 #theme,
-#entree {
+#entree,
+#home {
   font-family: "Sofia", cursive;
   font-size: 25px;
 }
 p {
   margin-left: 60px;
+  font-size: 15px;
 }
 #saveButton {
   padding: 15px;
   background-color: gray;
+  line-height: 25px;
   border: none;
+}
+.fa-check {
+  background-color: grey;
+  padding: 20px;
+  color: white;
 }
 
 /*Drop Down Menu*/
@@ -123,31 +130,26 @@ p {
   float: right;
   padding-right: 8px;
 }
-.box {
-  float: left;
-  width: 300px;
-  padding: 20px;
-}
+
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
 }
 .card-img-top {
-  width: 200px;
+  width: 220px;
 }
 button {
-  background-color: white;
+  background-color: none;
   border: none;
-  margin-top: 0px;
 }
 img:hover {
   opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
 }
-#theme {
-  position: fixed;
-  top: 90%;
+#theme,
+#home {
+  position: relative;
 }
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {

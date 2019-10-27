@@ -57,10 +57,9 @@ $(document).on("click", ".notSelected", function() {
   parent.css({
     opacity: "0.5",
     filter: "alpha(opacity=50)",
-    "background-color": "#d78c26",
-    border: "solid #d78c26 10px"
+    "box-shadow": "5px 10px 8px #888888"
   });
-  parent.attr("class", "animated zoomIn delay=2s");
+  parent.attr("class", "animated heartBeat delay=2s");
 
   //Onclick Function to pass in ID to a new Ajax call
   if (itemClassification === "drink") {
@@ -148,7 +147,7 @@ $(document).on("click", ".notSelected", function() {
   });
 });
 
-//Render Categories Function
+//Categories Function
 function categories() {
   const category = $(this).attr("id");
   let queryURL;
@@ -177,12 +176,13 @@ function categories() {
     }
 
     for (var i = 0; i < results.length; i++) {
-      var boxDiv = $("<div>");
-      boxDiv.attr("class", "box");
       var button = $("<button>");
       button.attr("class", "btn btn-light rounded");
-      boxDiv.append(button);
       var mealThumb = $("<img>");
+      mealThumb.css({
+        "box-shadow": "5px 10px 8px #888888",
+        border: "solid white 15px"
+      });
       mealThumb.attr("class", "card-img-top rounded notSelected");
 
       if (category === "drink") {
@@ -249,12 +249,13 @@ $("#searchButton").on("click", function(event) {
           );
         } else {
           for (var i = 0; i < results.length; i++) {
-            var boxDiv = $("<div>");
-            boxDiv.attr("class", "box");
             var button = $("<button>");
             button.attr("class", "btn btn-light");
-            boxDiv.append(button);
             var mealThumb = $("<img>");
+            mealThumb.css({
+              "box-shadow": "5px 10px 8px #888888",
+              border: "solid white 15px"
+            });
             mealThumb.attr({
               class: "card-img-top notSelected",
               src: results[i].strDrinkThumb,
@@ -268,12 +269,13 @@ $("#searchButton").on("click", function(event) {
       });
     } else {
       for (var i = 0; i < results.length; i++) {
-        var boxDiv = $("<div>");
-        boxDiv.attr("class", "box");
         var button = $("<button>");
         button.attr("class", "btn btn-light");
-        boxDiv.append(button);
         var mealThumb = $("<img>");
+        mealThumb.css({
+          "box-shadow": "5px 10px 8px #888888",
+          border: "solid white 15px"
+        });
 
         mealThumb.attr({
           class: "card-img-top",
