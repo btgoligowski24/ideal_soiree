@@ -99,8 +99,9 @@ p {
 
 /* On mouse-over */
 .sidenav a:hover,
-.dropdown-btn:hover {
-  color: #f1f1f1;
+.dropdown-btn:hover,
+.activeCate {
+  color: #f1f1f1 !important;
 }
 
 /* Main content */

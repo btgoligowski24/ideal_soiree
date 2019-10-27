@@ -33,7 +33,15 @@ module.exports = function(app) {
             }
           });
       })
-    );
+    )
+      .then(function(foodDrinks) {
+        console.log("pass");
+        res.redirect("/themes");
+      })
+      .catch(function(err) {
+        console.log("fail");
+        res.json(err);
+      });
   });
 
   // POST route for creating a new build a theme into DB by grabbing name

@@ -1,3 +1,9 @@
+function checkItemCount() {
+  if ($("#selectedItems").children().length > 0) {
+    $("#saveButton").css("display", "inline");
+  }
+}
+
 function insertTheme() {
   var url = decodeURIComponent(window.location.search);
   var name = url
@@ -41,6 +47,8 @@ function saveSelections() {
     type: "POST",
     url: "/api/build",
     data: JSON.stringify(itemArr)
+  }).then(function(response) {
+    window.location.href = "/themes";
   });
 }
 
@@ -144,11 +152,15 @@ $(document).on("click", ".notSelected", function() {
     });
 
     $("#selectedItems").append(newAElem);
+    checkItemCount();
   });
 });
 
 //Categories Function
 function categories() {
+  $(".dropdown-container a").removeClass("activeCate");
+  $(this).addClass("activeCate");
+
   const category = $(this).attr("id");
   let queryURL;
 
