@@ -38,30 +38,10 @@
   padding-right: 8px;
 }
 
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
-
 /* Style the caret down icon */
 .fa-caret-down {
   float: right;
   padding-right: 8px;
-}
-
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
 }
 
 /* Main content */
@@ -81,6 +61,10 @@
   color: white;
 }
 
+.curPage a {
+  color: inherit !important;
+}
+
 /* background styling for themes page active tabs */
 /* Theme Tab */
 .tabColors {
@@ -97,4 +81,24 @@ img:hover {
   opacity: 0.5;
   filter: alpha(opacity=50);
   /* For IE8 and earlier */
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
