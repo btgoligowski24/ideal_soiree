@@ -23,7 +23,7 @@ module.exports = function(app) {
       include: [db.foodDrink]
     }).then(function(themes) {
       res.render("themes", {
-        title: "Predefined Themes",
+        title: "Pre-Existing Themes",
         style: "themes.css",
         description: "See our predefined themes.",
         themes: themes
