@@ -26,7 +26,7 @@ function saveSelections() {
       name: $(chosenItems[i]).attr("data-name"),
       imageurl: $(chosenItems[i]).attr("data-imageurl"),
       apiid: $(chosenItems[i]).attr("data-apiid"),
-      classification: $(chosenItems[i]).attr("data-classification"),
+      ismeal: $(chosenItems[i]).attr("data-ismeal") === "true" ? 1 : 0,
       ingredients: $(chosenItems[i]).attr("data-ingredients"),
       instructions: $(chosenItems[i]).attr("data-instructions"),
       themeid: $(chosenItems[i]).attr("data-themeid")
@@ -50,7 +50,7 @@ $(document).on("click", ".notSelected", function() {
     .removeClass("notSelected")
     .addClass("selected");
   var clickId = $(this).attr("data-id");
-  var itemClassification = $(this).attr("data-classification");
+  var isMeal = $(this).attr("data-ismeal");
   var queryURL;
 
   var parent = $(this).parent();
@@ -62,7 +62,7 @@ $(document).on("click", ".notSelected", function() {
   parent.attr("class", "animated heartBeat delay=2s");
 
   //Onclick Function to pass in ID to a new Ajax call
-  if (itemClassification === "drink") {
+  if (isMeal === "false") {
     queryURL =
       "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + clickId;
   } else {
@@ -80,13 +80,13 @@ $(document).on("click", ".notSelected", function() {
     var themeId = $("#currentTheme").attr("data-id");
     var newAElem = $('<a href="#">');
 
-    if (itemClassification === "drink") {
+    if (isMeal === "false") {
       results = response.drinks[0];
       $(newAElem).text(results.strDrink);
       $(newAElem).attr({
         "data-imageurl": results.strDrinkThumb,
         "data-apiid": results.idDrink,
-        "data-classification": "drink",
+        "data-ismeal": false,
         "data-name": results.strDrink
       });
       ingredientCount = 15;
@@ -96,7 +96,7 @@ $(document).on("click", ".notSelected", function() {
       $(newAElem).attr({
         "data-imageurl": results.strMealThumb,
         "data-apiid": results.idMeal,
-        "data-classification": "meal",
+        "data-ismeal": true,
         "data-name": results.strMeal
       });
       ingredientCount = 20;
@@ -189,13 +189,13 @@ function categories() {
         mealThumb.attr({
           src: results[i].strDrinkThumb,
           "data-id": results[i].idDrink,
-          "data-classification": "drink"
+          "data-ismeal": false
         });
       } else {
         mealThumb.attr({
           src: results[i].strMealThumb,
           "data-id": results[i].idMeal,
-          "data-classification": "meal"
+          "data-ismeal": true
         });
       }
       button.append(mealThumb);
@@ -260,7 +260,7 @@ $("#searchButton").on("click", function(event) {
               class: "card-img-top notSelected",
               src: results[i].strDrinkThumb,
               "data-id": results[i].idDrink,
-              "data-classification": "drink"
+              "data-ismeal": false
             });
             button.append(mealThumb);
             $("#results").prepend(button);
@@ -281,7 +281,7 @@ $("#searchButton").on("click", function(event) {
           class: "card-img-top",
           src: results[i].strMealThumb,
           "data-id": results[i].idMeal,
-          "data-classification": "meal"
+          "data-ismeal": true
         });
         button.append(mealThumb);
         $("#results").prepend(button);

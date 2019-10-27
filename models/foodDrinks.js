@@ -8,14 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     imageURL: DataTypes.STRING,
-
-    classification: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
+    isMeal: DataTypes.BOOLEAN,
     apiID: {
       type: DataTypes.INTEGER,
       allowNull: false,

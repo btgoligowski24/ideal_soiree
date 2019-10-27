@@ -19,12 +19,24 @@ module.exports = function(app) {
 
   //Load for themes page
   app.get("/themes", function(req, res) {
-    db.Theme.findAll({}).then(function(themes_db) {
+    db.Theme.findAll({
+      include: [db.foodDrink]
+    }).then(function(themes) {
       res.render("themes", {
-        title: "Starter Themes",
+        title: "Predefined Themes",
         style: "themes.css",
-        description: "See our predefined themes."
+        description: "See our predefined themes.",
+        themes: themes
       });
+    });
+  });
+
+  //Load for themes page
+  app.get("/api/themes", function(req, res) {
+    db.Theme.findAll({
+      include: [db.foodDrink]
+    }).then(function(themes) {
+      res.json(themes);
     });
   });
 
