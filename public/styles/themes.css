@@ -83,6 +83,10 @@ img:hover {
   /* For IE8 and earlier */
 }
 
+#searchButton {
+  border: none;
+}
+
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
   .sidenav {
