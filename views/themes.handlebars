@@ -9,12 +9,8 @@
             <li class="nav-item">
                 <a name="home" class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item curPage">
                 <a name="themes" class="nav-link" href="/themes">Themes<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a name="build" class="nav-link disabled" href="/build" tabindex="-1" aria-disabled="true">Build a
-                    Theme</a>
             </li>
         </ul>
     </div>
@@ -28,21 +24,12 @@
         </form>
     </nav>
 
-    <button class="dropdown-btn">Themes
+    <button class="dropdown-btn" style="font-family: 'Sofia', cursive; font-size: 18px;">Themes
         <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-container">
-        <a href="#">Almost Famous</a>
-        <a href="#">Alice in Wonderland</a>
-        <a href="#">Sex and the City</a>
-        <a href="#">Fright Fest</a>
-        <a href="#">Cinco de Drinko</a>
-        <a href="#">Winter Wonderland</a>
-        <a href="#">Prohibition</a>
-        <a href="#">A Night in Paris</a>
-        <a href="#">Impeachment Party</a>
-        <a href="#">Redneck Yacht Club</a>
-    </div>
+    {{#each themes}}
+    <a class="dropdown-item" href="#">{{name}}</a>
+    {{/each}}
 </div>
 <!-- MAIN CONTENT -->
 <div class="main">
@@ -65,12 +52,13 @@
                                     aria-controls="collapse{{this.id}}">{{this.name}}</button>
                             </h2>
                         </div>
-                        <div id="collapse{{this.id}}" class="collapse show" aria-labelledby="heading{{this.id}}"
+                        <div id="collapse{{this.id}}" class="collapse" aria-labelledby="heading{{this.id}}"
                             data-parent="#accordionExample">
                             <div class="card-body">
                                 <div class="card">
                                     <div class="card-header">
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <button type="button" class="btn btn-dark addtotheme">ADD TO THEME</button>
+                                        <ul class="nav nav-tabs" id="myTab{{this.id}}" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link text-dark active tabColors" id="home{{this.id}}-tab"
                                                     data-toggle="tab" href="#home{{this.id}}" role="tab"
@@ -105,7 +93,8 @@
                                                     {{#each foodDrinks}}
                                                     {{#if isMeal}}
                                                     <div class="card">
-                                                        <img src="{{this.imageURL}}" class="card-img-top" alt="Oops. Looks like you're on a diet. Be happy and eat your lettuce">
+                                                        <img src="{{this.imageURL}}" class="card-img-top"
+                                                            alt="Oops. Looks like you're on a diet. Be happy and eat your lettuce">
                                                     </div>
                                                     {{/if}}
                                                     {{/each}}

@@ -1,34 +1,54 @@
 USE themes_db;
 
-INSERT INTO themes (name, description, createdAt, updatedAt)
-VALUES ("Almost Famous", "Embrace freedom, love, and rock & roll", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Almost Famous", "Embrace freedom, love, and rock & roll", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("Alice in Wonderland", "Take a journey down the rabbit hole for a mostly guarenteed good time.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Alice in Wonderland", "Take a journey down the rabbit hole for a mostly guarenteed good time.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("Sex and the City", "OMG BESTIES FOREVERRRR! *SQUEALS AND GROUP HUG*", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Sex and the City", "OMG BESTIES FOREVERRRR! *SQUEALS AND GROUP HUG*", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("Fright Fest", "It'll be one hell of a hauntingly frightening night...", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Fright Fest", "It'll be one hell of a hauntingly frightening night...", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("Winter Wonderland", "Celebrate the season with friends and family", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Winter Wonderland", "Celebrate the season with friends and family", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("Cinco de Drinko", "One tequila, two tequila, three tequila, floor.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Cinco de Drinko", "One tequila, two tequila, three tequila, floor.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("Prohibition", "Fight for your right to parrrtayyyy!", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Prohibition", "Fight for your right to parrrtayyyy!", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("A Night in Paris", "On se voit a paris?", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("A Night in Paris", "On se voit a paris?", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("Impeachment Party", "About damn time.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Impeachment Party", "About damn time.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-INSERT INTO themes (name, description, createdAt, updatedAt) 
-VALUES ("Redneck Yacht Club", "Featuring an appearance by recently impeached Donald Trump", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO themes
+    (name, description, createdAt, updatedAt)
+VALUES
+    ("Redneck Yacht Club", "Featuring an appearance by recently impeached Donald Trump", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 INSERT INTO fooddrinks
     (name, imageURL, isMeal, apiID, ingredients, instructions, createdAt, updatedAt, ThemeId)
@@ -51,19 +71,19 @@ VALUES
     ("Acid", "https://www.thecocktaildb.com/images/media/drink/xuxpxt1479209317.jpg", 0, 14610, "1 oz Bacardi 151 proof rum|1 oz Wild Turkey", "Pour in the 151 first followed by the 101 served with a Coke or Dr Pepper chaser. ", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1);
 
 INSERT INTO fooddrinks
-    (name, imageURL, isMeal, apiID, ingredients, createdAt, updatedAt, ThemeId)
+    (name, imageURL, isMeal, apiID, ingredients, instructions, createdAt, updatedAt, ThemeId)
 VALUES
     ("Three-Cheese Souffles", "https://www.themealdb.com/images/media/meals/sxwquu1511793428.jpg", 1, 52912, "50g Butter|25g Parmesan|300ml Milk|2 Bay Leaves|5 tbs Plain Flour|1/2 tsp English Mustard|Pod of Cayenne Pepper|140g Gruyere|3 Eggs|8 slices Goats Cheese|150ml Double Cream|to serve Spinach", "Heat oven to 200C/180C fan/ gas 6 and butter 4 small (about 200ml) ramekins. Sprinkle the Parmesan into the ramekins, turning until all sides are covered. Place the milk and bay leaves in a large saucepan over a gentle heat and bring to the boil. Turn off the heat and leave to infuse for 15 mins.\r\nDiscard the bay leaves, add the butter and flour, and return to a low heat. Very gently simmer, stirring continuously with a balloon whisk, for about 6 mins until you get a smooth, thick white sauce. Make sure that you get right into the corners of the pan to stop the sauce from catching or becoming lumpy.\r\nOnce thickened, transfer the sauce to a large bowl and stir in the mustard powder, cayenne pepper, Gruyère and egg yolks until fully combined.\r\nIn a spotlessly clean bowl and with a clean whisk, beat the egg whites just until peaks begin to form.\r\nCarefully fold the egg whites into the cheese sauce in three stages making sure you fold, rather than stir, to keep the egg whites light and airy. Fill the prepared ramekins with the soufflé mix.\r\nTop each soufflé with a slice of goat’s cheese, then place on a baking tray. Bake for 20-25 mins or until springy and well risen but cooked through.\r\nLeave to cool, then run a knife around the edge of each dish and remove the soufflés. If preparing in advance, place soufflés upside down (for neat presentation), on a tray. Cover tray in cling film. Chill for a few days or freeze for up to 1 month.\r\nWhen ready to re-bake, heat oven to 200C/180C fan/gas 6. Place the upside-down soufflés in a shallow baking dish, top with the remaining goat’s cheese slices and pour over the cream (this stops them from drying out when baked for the second time). Cook for 8-10 mins until golden. Serve immediately alongside some simply dressed salad.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2);
 INSERT INTO fooddrinks
-    (name, imageURL, isMeal, apiID, ingredients, createdAt, updatedAt, ThemeId)
+    (name, imageURL, isMeal, apiID, ingredients, instructions, createdAt, updatedAt, ThemeId)
 VALUES
     ("Creme Brulee", "https://www.themealdb.com/images/media/meals/uryqru1511798039.jpg", 1, 52917, "568ml Double Cream|100g White Chocolate Chips|Pod of Vanilla|6 Egg Yolks|2 tbs Caster Sugar|Top Caster Sugar", "Heat the cream, chocolate and vanilla pod in a pan until the chocolate has melted. Take off the heat and allow to infuse for 10 mins, scraping the pod seeds into the cream. If using the vanilla extract, add straight away. Heat oven to 160C/fan 140C/gas 3.\r\nBeat yolks and sugar until pale. stir in the chocolate cream. Strain into a jug and pour into ramekins. Place in a deep roasting tray and pour boiling water halfway up the sides. Bake for 15-20 mins until just set with a wobbly centre. Chill in the fridge for at least 4 hrs.\r\nTo serve, sprinkle some sugar on top of the brûlées and caramelise with a blowtorch or briefly under a hot grill. Leave caramel to harden, then serve.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2);
 INSERT INTO fooddrinks
-    (name, imageURL, isMeal, apiID, ingredients, createdAt, updatedAt, ThemeId)
+    (name, imageURL, isMeal, apiID, ingredients, instructions, createdAt, updatedAt, ThemeId)
 VALUES
     ("Absinthe #2", "https://www.thecocktaildb.com/images/media/drink/uxxtrt1472667197.jpg", 0, 12790, "1 bottle Vodka|50 gr Sugar|50 ml pure Anise|1 tblsp Licorice root|1 Wormwood", "Mix together and let sit a few days. Strain through a coffee filter. To serve mix 1 part absinthe to 4 parts water, add ice, enjoy.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2);
 INSERT INTO fooddrinks
-    (name, imageURL, isMeal, apiID, ingredients, createdAt, updatedAt, ThemeId)
+    (name, imageURL, isMeal, apiID, ingredients, instructions, createdAt, updatedAt, ThemeId)
 VALUES
     ("Brainteaser", "https://www.thecocktaildb.com/images/media/drink/ruywtq1461866066.jpg", 0, 13405, "30 ml white Sambuca|30 ml Erin Cream|5 ml Advocaat", "layered erin first, then sambuca and then avocart(should sit in middle of other two. To drink: use a straw to suck up avocart then shot the rest and then suck fumes up through straw.", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2);
 
