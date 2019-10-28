@@ -54,18 +54,18 @@
 
                 <!-- COLLAPSE CARD -->
                 <div class="accordion" id="accordionExample">
-                    <!-- START ALMOST FAMOUS-->
+                    <!-- START THEME-->
                     {{#each themes}}
                     <div class="card">
-                        <div class="card-header" id="{{this.id}}">
+                        <div class="card-header" id="heading{{this.id}}">
                             <h2 class="mb-0">
                                 <button class="btn btn-link text-dark"
                                     style="font-family: 'Sofia', cursive; font-size: 24pt;" type="button"
-                                    data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
-                                    aria-controls="collapseFive">{{this.name}}</button>
+                                    data-toggle="collapse" data-target="#collapse{{this.id}}" aria-expanded="true"
+                                    aria-controls="collapse{{this.id}}">{{this.name}}</button>
                             </h2>
                         </div>
-                        <div id="collapseFive" class="collapse show" aria-labelledby="headingFive"
+                        <div id="collapse{{this.id}}" class="collapse show" aria-labelledby="heading{{this.id}}"
                             data-parent="#accordionExample">
                             <div class="card-body">
                                 <div class="card">
@@ -88,7 +88,7 @@
                                             </li>
                                         </ul>
                                         <div class="tab-content">
-                                            <!-- ALMOST FAMOUS THEME TAB -->
+                                            <!-- THEME TAB -->
                                             <div class="tab-pane active" id="home{{this.id}}" role="tabpanel"
                                                 aria-labelledby="home{{this.id}}-tab">
                                                 <div class="jumbotron jumbotron-fluid">
@@ -98,20 +98,20 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- ALMOST FAMOUS FOOD TAB -->
+                                            <!-- FOOD TAB -->
                                             <div class="tab-pane" id="profile{{this.id}}" role="tabpanel"
                                                 aria-labelledby="profile{{this.id}}-tab">
                                                 <div class="card-columns">
                                                     {{#each foodDrinks}}
                                                     {{#if isMeal}}
                                                     <div class="card">
-                                                        <img src="{{this.imageURL}}" class="card-img-top" alt="">
+                                                        <img src="{{this.imageURL}}" class="card-img-top" alt="Oops. Looks like you're on a diet. Be happy and eat your lettuce">
                                                     </div>
                                                     {{/if}}
                                                     {{/each}}
                                                 </div>
                                             </div>
-                                            <!-- ALMOST FAMOUS DRINKS TAB -->
+                                            <!-- DRINKS TAB -->
                                             <div class="tab-pane" id="messages{{this.id}}" role="tabpanel"
                                                 aria-labelledby="messages{{this.id}}-tab">
                                                 <div class="card-columns">
@@ -119,7 +119,7 @@
                                                     {{#unless isMeal}}
                                                     <div class="card">
                                                         <img src="{{this.imageURL}}" class="card-img-top"
-                                                            alt="white_russian">
+                                                            alt="Oops. Looks like you're on a diet. Be happy and eat your lettuce">
                                                     </div>
                                                     {{/unless}}
                                                     {{/each}}
