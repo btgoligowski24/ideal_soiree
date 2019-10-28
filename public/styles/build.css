@@ -67,7 +67,7 @@ p {
 /* Fixed sidenav, full height */
 .sidenav {
   height: 100%;
-  width: 230px;
+  width: 15%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -82,7 +82,7 @@ p {
 .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   color: #818181;
   display: block;
   border: none;
@@ -102,7 +102,7 @@ p {
 
 /* Main content */
 .main {
-  margin-left: 200px;
+  margin-left: 15%;
   /* Same as the width of the sidenav */
   font-size: 20px;
   /* Increased text to enable scrolling */
@@ -144,10 +144,7 @@ img:hover {
   opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
 }
-#theme,
-#home {
-  position: relative;
-}
+
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
   .sidenav {
