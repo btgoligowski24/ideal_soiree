@@ -17,25 +17,21 @@ p {
   font-size: 15px;
 }
 #saveButton {
-  padding: 15px;
-  background-color: gray;
-  line-height: 25px;
-  border: none;
+  background-color: #d78c26;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.fa-check {
-  background-color: grey;
-  padding: 20px;
-  color: white;
+#currentTheme {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#instructions {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#saveButton:hover {
+  background-color: #d78d2652;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*Drop Down Menu*/
-.dropbtn {
-  background-color: rgba(224, 118, 47, 0.836);
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
 .dropdown {
   position: relative;
   display: inline-block;
@@ -71,7 +67,7 @@ p {
 /* Fixed sidenav, full height */
 .sidenav {
   height: 100%;
-  width: 15%;
+  width: 230px;
   position: fixed;
   z-index: 1;
   top: 0;
