@@ -126,8 +126,11 @@ $(document).on("click", ".notSelected", function() {
     for (var i = 1; i <= ingredientCount; i++) {
       if (
         (results["strIngredient" + i] === "" ||
-          results["strIngredient" + i] === null) &&
-        (results["strMeasure" + i] === "" || results["strMeasure" + i] === null)
+          results["strIngredient" + i] === null ||
+          results["strIngredient" + i] === " ") &&
+        (results["strMeasure" + i] === "" ||
+          results["strMeasure" + i] === null ||
+          results["strMeasure" + i] === " ")
       ) {
         break;
       } else {
