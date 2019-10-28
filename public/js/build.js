@@ -1,3 +1,9 @@
+function checkItemCount() {
+  if ($("#selectedItems").children().length > 0) {
+    $("#saveButton").css("display", "inline");
+  }
+}
+
 function insertTheme() {
   var url = decodeURIComponent(window.location.search);
   var name = url
@@ -19,29 +25,44 @@ function insertTheme() {
 }
 
 function saveSelections() {
-  const chosenItems = $("#selectedItems").children();
-  let itemArr = [];
-  for (let i = 0; i < chosenItems.length; i++) {
-    const newItem = {
-      name: $(chosenItems[i]).attr("data-name"),
-      imageurl: $(chosenItems[i]).attr("data-imageurl"),
-      apiid: $(chosenItems[i]).attr("data-apiid"),
-      ismeal: $(chosenItems[i]).attr("data-ismeal") === "true" ? 1 : 0,
-      ingredients: $(chosenItems[i]).attr("data-ingredients"),
-      instructions: $(chosenItems[i]).attr("data-instructions"),
-      themeid: $(chosenItems[i]).attr("data-themeid")
-    };
-    itemArr.push(newItem);
-  }
+  const themeId = $(this)
+    .siblings()
+    .children("#currentTheme")[0].dataset.id;
+  if (themeId === "") {
+    alert(
+      "You must associate your selections with a theme. Go to our themes page to select one or build a new theme from the home page."
+    );
+  } else {
+    const chosenItems = $("#selectedItems").children();
+    let itemArr = [];
+    for (let i = 0; i < chosenItems.length; i++) {
+      const newItem = {
+        name: $(chosenItems[i]).attr("data-name"),
+        imageurl: $(chosenItems[i]).attr("data-imageurl"),
+        apiid: $(chosenItems[i]).attr("data-apiid"),
+        ismeal: $(chosenItems[i]).attr("data-ismeal") === "true" ? 1 : 0,
+        ingredients: $(chosenItems[i]).attr("data-ingredients"),
+        instructions: $(chosenItems[i]).attr("data-instructions"),
+        themeid: $(chosenItems[i]).attr("data-themeid")
+      };
+      itemArr.push(newItem);
+    }
 
-  $.ajax({
-    headers: {
-      "Content-Type": "application/json"
-    },
-    type: "POST",
-    url: "/api/build",
-    data: JSON.stringify(itemArr)
-  });
+    $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "/api/build",
+      data: JSON.stringify(itemArr)
+    })
+      .then(function(response) {
+        window.location.href = "/themes";
+      })
+      .catch(function(err) {
+        alert(err.responseText);
+      });
+  }
 }
 
 //Onclick Image
@@ -144,11 +165,15 @@ $(document).on("click", ".notSelected", function() {
     });
 
     $("#selectedItems").append(newAElem);
+    checkItemCount();
   });
 });
 
 //Categories Function
 function categories() {
+  $(".dropdown-container a").removeClass("activeCate");
+  $(this).addClass("activeCate");
+
   const category = $(this).attr("id");
   let queryURL;
 

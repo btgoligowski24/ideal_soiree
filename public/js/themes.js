@@ -14,4 +14,19 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
-$("#collapse1").addClass("show");
+var prevUrl = document.referrer;
+var themeId = prevUrl
+  .split("?")
+  .slice(1)
+  .toString()
+  .split("&")
+  .slice(0, 1)
+  .toString();
+var strIndex = themeId.indexOf("=") + 1;
+themeId = themeId.slice(strIndex);
+
+if (themeId === "") {
+  $("#collapse1").addClass("show");
+} else {
+  $("#collapse" + themeId).addClass("show");
+}

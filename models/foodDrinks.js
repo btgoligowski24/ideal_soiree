@@ -8,7 +8,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     imageURL: DataTypes.STRING,
-    isMeal: DataTypes.BOOLEAN,
+    isMeal: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
     apiID: {
       type: DataTypes.INTEGER,
       allowNull: false,

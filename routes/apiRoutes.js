@@ -33,7 +33,13 @@ module.exports = function(app) {
             }
           });
       })
-    );
+    )
+      .then(function(foodDrinks) {
+        res.status(200);
+      })
+      .catch(function(err) {
+        res.status(400).send("Oops, something went wrong!");
+      });
   });
 
   // POST route for creating a new build a theme into DB by grabbing name
