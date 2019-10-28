@@ -12,8 +12,8 @@
     </nav>
 
     <!--Side-Nav Categories -->
-     <a href="/" id="home">Home</a>
-         <a href="/themes" id="theme">Themes</a>
+    <a href="/" id="home">Home</a>
+    <a href="/themes" id="theme">Themes</a>
 
     <div class="dropdown-btn" id="cate">Categories
         <i class="fa fa-caret-down"></i>
@@ -36,31 +36,63 @@
         <a href="#" class="categoryOption" id="side">Sides</a>
         <a href="#" class="categoryOption" id="dessert">Dessert</a>
     </div>
-
 </div>
 
-<!--Page Header-->
+<!--Nav Bar Header-->
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header"></div>
         <ul class="nav navbar-nav navbar-right">
 
-            <!--View Selections Button-->
+            <!--Nav Buttons-->
             <li>
+                <button type="button" class="btn btn-secondary" id="instructions" data-toggle="modal"
+                    data-target="#exampleModal">
+                    Instructions
+                </button>
                 <div class="dropdown">
-                    <button id="currentTheme" type="button" class="dropbtn rounded navbar-btn"></button>
+                    <button id="currentTheme" type="button" class="btn btn-dark navbar-btn"></button>
                     <div id="selectedItems" class="dropdown-content"></div>
                 </div>
-                <button class="btn btn-dark navbar-btn" id="saveButton" style="display: none;">Save Selections to Theme</button>
+                <button class="btn btn-warning navbar-btn" id="saveButton" style="display: none;">Save Selections to
+                    Theme</button>
             </li>
         </ul>
     </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Build a Theme Instructions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="font-size: 15px; text-align:left">
+                Click on the "Categories" dropdown to the left to choose food or drink options for your party. You can
+                search for a food or
+                drink in the search bar as well. Select items to add to your Party theme by clicking on the image. View
+                your selections by hovering over the "View Selections Button". When you're ready to submit your party
+                selections, click on the "Save Selections to Theme" button. Your party theme will then be saved!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<!--Page Content-->
 <div class="main" style="text-align: center;">
     <div class="container">
         <h1>Build A Theme</h1>
-        <p>Click on the category dropdown to choose food or drinks options for your party. You can search for a food or
-            drink as well in the search. Select items to add to your Party theme!</p>
+        <hr style="margin-left: 40px;">
 
         <!--Search Bar Results Section-->
         <div id="results">
