@@ -137,7 +137,8 @@ $(document).on("click", ".notSelected", function() {
         if (i === 1) {
           if (
             results["strMeasure" + i] === "" ||
-            results["strMeasure" + i] === null
+            results["strMeasure" + i] === null ||
+            results["strMeasure" + i] === " "
           ) {
             ingredients += results["strIngredient" + i];
           } else {
@@ -147,7 +148,8 @@ $(document).on("click", ".notSelected", function() {
         } else {
           if (
             results["strMeasure" + i] === "" ||
-            results["strMeasure" + i] === null
+            results["strMeasure" + i] === null ||
+            results["strMeasure" + i] === " "
           ) {
             ingredients += "|" + results["strIngredient" + i];
           } else {
