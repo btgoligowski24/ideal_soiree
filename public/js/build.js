@@ -126,15 +126,19 @@ $(document).on("click", ".notSelected", function() {
     for (var i = 1; i <= ingredientCount; i++) {
       if (
         (results["strIngredient" + i] === "" ||
-          results["strIngredient" + i] === null) &&
-        (results["strMeasure" + i] === "" || results["strMeasure" + i] === null)
+          results["strIngredient" + i] === null ||
+          results["strIngredient" + i] === " ") &&
+        (results["strMeasure" + i] === "" ||
+          results["strMeasure" + i] === null ||
+          results["strMeasure" + i] === " ")
       ) {
         break;
       } else {
         if (i === 1) {
           if (
             results["strMeasure" + i] === "" ||
-            results["strMeasure" + i] === null
+            results["strMeasure" + i] === null ||
+            results["strMeasure" + i] === " "
           ) {
             ingredients += results["strIngredient" + i];
           } else {
@@ -144,7 +148,8 @@ $(document).on("click", ".notSelected", function() {
         } else {
           if (
             results["strMeasure" + i] === "" ||
-            results["strMeasure" + i] === null
+            results["strMeasure" + i] === null ||
+            results["strMeasure" + i] === " "
           ) {
             ingredients += "|" + results["strIngredient" + i];
           } else {
