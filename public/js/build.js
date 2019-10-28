@@ -303,7 +303,7 @@ $("#searchButton").on("click", function(event) {
         });
 
         mealThumb.attr({
-          class: "card-img-top",
+          class: "card-img-top notSelected",
           src: results[i].strMealThumb,
           "data-id": results[i].idMeal,
           "data-ismeal": true
