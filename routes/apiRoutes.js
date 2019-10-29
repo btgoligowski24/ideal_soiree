@@ -49,7 +49,7 @@ module.exports = function(app) {
     // and complete property (req.body)
 
     db.sequelize
-      .query("SELECT * FROM themes WHERE LOWER(name) = :theme LIMIT 1", {
+      .query("SELECT * FROM Themes WHERE LOWER(name) = :theme LIMIT 1", {
         replacements: {
           theme: req.body.name.toLowerCase()
         },
