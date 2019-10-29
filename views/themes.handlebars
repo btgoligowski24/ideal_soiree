@@ -23,13 +23,17 @@
                 style="margin-bottom: 20px">
         </form>
     </nav>
+    <div class="dropdown show">
+        <button class="dropdown-btn">Themes
+            <i class="fa fa-caret-down"></i>
+        </button>
 
-    <button class="dropdown-btn" style="font-family: 'Sofia', cursive; font-size: 18px;">Themes
-        <i class="fa fa-caret-down"></i>
-    </button>
-    {{#each themes}}
-    <a class="dropdown-item" href="#">{{name}}</a>
-    {{/each}}
+        <div class="dropdown-container" style="background-color: inherit; display: none;">
+            {{#each themes}}
+            <a class="dropdown-item" href="#">{{name}}</a>
+            {{/each}}
+        </div>
+    </div>
 </div>
 <!-- MAIN CONTENT -->
 <div class="main">
@@ -37,7 +41,7 @@
         <div class="row">
             <div class="d-inline col-12 pl-5 pt-3">
                 <h1 style="font-family: 'Sofia', cursive; font-size: 40pt; text-align: center;" class="text-dark">
-                    Starter Themes</h1>
+                    {{title}}</h1>
 
                 <!-- COLLAPSE CARD -->
                 <div class="accordion" id="accordionExample">
@@ -57,7 +61,7 @@
                             <div class="card-body">
                                 <div class="card">
                                     <div class="card-header">
-                                        <button type="button" class="btn btn-dark addtotheme">ADD TO THEME</button>
+                                        <button type="button" data-id="{{this.id}}" data-name="{{this.name}}" class="btn btn-dark addtotheme">ADD TO THEME</button>
                                         <ul class="nav nav-tabs" id="myTab{{this.id}}" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link text-dark active tabColors" id="home{{this.id}}-tab"
@@ -91,12 +95,12 @@
                                                 aria-labelledby="profile{{this.id}}-tab">
                                                 <div class="card-columns">
                                                     {{#each foodDrinks}}
-                                                    {{#if isMeal}}
-                                                    <div class="card">
-                                                        <img src="{{this.imageURL}}" class="card-img-top"
-                                                            alt="Oops. Looks like you're on a diet. Be happy and eat your lettuce">
-                                                    </div>
-                                                    {{/if}}
+                                                        {{#if isMeal}}
+                                                            <div class="card">
+                                                                <img src="{{this.imageURL}}" class="card-img-top"
+                                                                    alt="Oops. Looks like you're on a diet. Be happy and eat your lettuce">
+                                                            </div>
+                                                        {{/if}}
                                                     {{/each}}
                                                 </div>
                                             </div>
@@ -105,12 +109,12 @@
                                                 aria-labelledby="messages{{this.id}}-tab">
                                                 <div class="card-columns">
                                                     {{#each foodDrinks}}
-                                                    {{#unless isMeal}}
-                                                    <div class="card">
-                                                        <img src="{{this.imageURL}}" class="card-img-top"
-                                                            alt="Oops. Looks like you're on a diet. Be happy and eat your lettuce">
-                                                    </div>
-                                                    {{/unless}}
+                                                        {{#unless isMeal}}
+                                                            <div class="card">
+                                                                <img src="{{this.imageURL}}" class="card-img-top"
+                                                                    alt="Oops. Looks like you're on a diet. Be happy and eat your lettuce">
+                                                            </div>
+                                                        {{/unless}}
                                                     {{/each}}
                                                 </div>
                                             </div>
