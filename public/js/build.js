@@ -57,7 +57,7 @@ function saveSelections() {
       data: JSON.stringify(itemArr)
     })
       .then(function(response) {
-        window.location.href = "/themes";
+        window.location.href = response + "#heading" + themeId;
       })
       .catch(function(err) {
         alert(err.responseText);

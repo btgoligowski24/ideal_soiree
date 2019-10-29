@@ -1,6 +1,6 @@
 // Creates a "theme" table that matches up with DB
 module.exports = function(sequelize, DataTypes) {
-  var Theme = sequelize.define("Theme", {
+  var Theme = sequelize.define("theme", {
     // Giving the theme model a name of type STRING
     name: {
       type: DataTypes.STRING,
@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
   Theme.associate = function(models) {
     // Associating Theme with Posts
     // When an Theme is deleted, also delete any associated Posts
-    Theme.hasMany(models.foodDrink, {
+    Theme.hasMany(models.fooddrink, {
       onDelete: "cascade"
     });
   };

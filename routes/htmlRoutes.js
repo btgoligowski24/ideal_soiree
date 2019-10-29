@@ -19,25 +19,29 @@ module.exports = function(app) {
 
   //Load for themes page
   app.get("/themes", function(req, res) {
-    db.Theme.findAll({
-      include: [db.foodDrink]
-    }).then(function(themes) {
-      res.render("themes", {
-        title: "Pre-Existing Themes",
-        style: "themes.css",
-        description: "See the themes that already exist.",
-        themes: themes
+    db.theme
+      .findAll({
+        include: [db.fooddrink]
+      })
+      .then(function(themes) {
+        res.render("themes", {
+          title: "Pre-Existing Themes",
+          style: "themes.css",
+          description: "See the themes that already exist.",
+          themes: themes
+        });
       });
-    });
   });
 
   //Load for themes page
   app.get("/api/themes", function(req, res) {
-    db.Theme.findAll({
-      include: [db.foodDrink]
-    }).then(function(themes) {
-      res.json(themes);
-    });
+    db.theme
+      .findAll({
+        include: [db.fooddrink]
+      })
+      .then(function(themes) {
+        res.json(themes);
+      });
   });
 
   // Render 404 page for any unmatched routes

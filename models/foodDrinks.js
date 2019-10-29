@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var FoodDrink = sequelize.define("foodDrink", {
+  var FoodDrink = sequelize.define("fooddrink", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
   FoodDrink.associate = function(models) {
     // We're saying that a FoodDrink should belong to a theme
     // A FoodDrink can't be created without an theme due to the foreign key constraint
-    FoodDrink.belongsTo(models.Theme, {
+    FoodDrink.belongsTo(models.theme, {
       foreignKey: {
         allowNull: false
       }

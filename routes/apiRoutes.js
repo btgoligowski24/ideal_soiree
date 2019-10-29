@@ -1,17 +1,17 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // POST route for creating foodDrinks into DB uniquely based on apiid and themeid
+  // POST route for creating fooddrinks into DB uniquely based on apiid and themeid
   app.post("/api/build", function(req, res) {
     var items = req.body;
 
     Promise.all(
       items.map(function(value) {
-        return db.foodDrink
+        return db.fooddrink
           .findOrCreate({
             where: {
               apiID: value.apiid,
-              ThemeId: value.themeid
+              themeId: value.themeid
             },
             defaults: {
               name: value.name,
@@ -20,22 +20,22 @@ module.exports = function(app) {
               apiID: value.apiid,
               ingredients: value.ingredients,
               instructions: value.instructions,
-              ThemeId: value.themeid
+              themeId: value.themeid
             }
           })
           .spread(function(itemResult, created) {
-            // itemResult is the foodDrink instance
+            // itemResult is the fooddrink instance
 
             if (created) {
-              // created will be true if a new foodDrink was created
+              // created will be true if a new fooddrink was created
             } else {
               console.log("This item already belongs to this theme.");
             }
           });
       })
     )
-      .then(function(foodDrinks) {
-        res.status(200);
+      .then(function(themes) {
+        res.status(200).send("/themes");
       })
       .catch(function(err) {
         res.status(400).send("Oops, something went wrong!");
@@ -49,7 +49,7 @@ module.exports = function(app) {
     // and complete property (req.body)
 
     db.sequelize
-      .query("SELECT * FROM Themes WHERE LOWER(name) = :theme LIMIT 1", {
+      .query("SELECT * FROM themes WHERE LOWER(name) = :theme LIMIT 1", {
         replacements: {
           theme: req.body.name.toLowerCase()
         },
@@ -63,7 +63,8 @@ module.exports = function(app) {
               "Theme Already Exists! Check out our themes page or try a different name."
             );
         } else {
-          db.Theme.create(req.body)
+          db.theme
+            .create(req.body)
             .then(function(newTheme) {
               // We have access to the new theme as an argument inside of the callback function
               res.json(newTheme);
@@ -79,12 +80,14 @@ module.exports = function(app) {
 
   //delete POST request here
   app.delete("/api/themes/:id", function(req, res) {
-    db.Theme.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(Theme) {
-      res.json(Theme);
-    });
+    db.theme
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function(Theme) {
+        res.json(Theme);
+      });
   });
 };
