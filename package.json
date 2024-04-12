@@ -16,7 +16,7 @@
     "express-handlebars": "^5.3.1",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
-    "mysql2": "^1.6.5",
+    "mysql2": "^3.9.4",
     "react-scripts": "^5.0.1",
     "sequelize": "^6.29.0",
     "sequelize-cli": "^5.5.1"
